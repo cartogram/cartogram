@@ -1,0 +1,2 @@
+- [ ] Move all templates from google doc to this repo
+- [ ] Add alex `cartogram/lint-templates`

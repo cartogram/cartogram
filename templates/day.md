@@ -1,0 +1,21 @@
+## Standup
+
+**How do you feel today?**
+
+**What did you do since yesterday?**
+
+**What will you do today?**
+
+**Is there anything blocking your progress?**
+
+## Habits
+
+- [ ] Run
+- [ ] Meditate
+- [ ] Read
+- [ ] Therapy
+- [ ]
+
+## Food Log
+
+## Thought Records
