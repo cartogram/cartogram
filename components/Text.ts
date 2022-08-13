@@ -4,27 +4,27 @@ export const textStyles = css`
   width: 100%;
   font-weight: normal;
   display: block;
-  font-size: var(--ft-size-small);
+  font-size: var(--ft-size-body);
 `;
 
 export const Text = styled.p`
   ${textStyles}
 `;
 
-export const mediumStyles = css`
+export const largeStyles = css`
   width: 100%;
   text-indent: 0;
-  font-size: var(--ft-size-medium);
+  font-size: var(--ft-size-large);
   margin: var(--space-05rem) 0;
 `;
 
-export const Medium = styled.p`
-  ${mediumStyles}
+export const Large = styled.p`
+  ${largeStyles}
 `;
 
 export const smallStyles = css`
   width: 100%;
-  font-size: var(--ft-size-xxsmall);
+  font-size: var(--ft-size-small);
 `;
 
 export const Small = styled.p`

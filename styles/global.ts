@@ -1,32 +1,24 @@
 import {createGlobalStyle} from 'styled-components';
 
 import theme from './theme';
-import {reset, respond} from './utils';
+import {reset} from './utils';
 
 const GlobalStyle = createGlobalStyle`
   :root {
     --ft-screen-width: 1440;
-    --ft-body-min: 0.9rem; /* Going this small for demo purposes */
-    --ft-body-max: 4rem;
+    --ft-body-min: 1rem; /* Going this small for demo purposes */
+    --ft-body-max: 5rem;
     --ft-body-vw: calc(var(--ft-body) / var(--ft-screen-width) * 100vw);
 
-    --ft-body: 20;
+    --ft-body: 22;
     --ft-size-body: clamp(var(--ft-body-min), var(--ft-body-vw), var(--ft-body-max));
     
-    --ft-heading: 40;
-    --ft-size-heading: clamp(var(--ft-body-min) * (var(--ft-heading) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-heading) / var(--ft-body)), var(--ft-body-max) * (var(--ft-heading) / var(--ft-body)));
-
-    --ft-small: 22;
-    --ft-size-small: clamp(var(--ft-body-min) * (var(--ft-small) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-small) / var(--ft-body)), var(--ft-body-max) * (var(--ft-small) / var(--ft-body)));
-
-    --ft-xsmall: 16;
-    --ft-size-xsmall: clamp(var(--ft-body-min) * (var(--ft-xsmall) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-xsmall) / var(--ft-body)), var(--ft-body-max) * (var(--ft-xsmall) / var(--ft-body)));
+    --ft-size-small: 13px;
     
-    --ft-xxsmall: 13;
-    --ft-size-xxsmall: clamp(var(--ft-body-min) * (var(--ft-xsmall) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-xxsmall) / var(--ft-body)), var(--ft-body-max) * (var(--ft-xxsmall) / var(--ft-body)));
-    
-    --ft-medium: 30;
-    --ft-size-medium: clamp(var(--ft-body-min) * (var(--ft-medium) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-medium) / var(--ft-body)), var(--ft-body-max) * (var(--ft-medium) / var(--ft-body)));
+    --ft-size-medium: var(--ft-size-body);
+
+    --ft-large: 30;
+    --ft-size-large: clamp(var(--ft-body-min) * (var(--ft-large) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-large) / var(--ft-body)), var(--ft-body-max) * (var(--ft-large) / var(--ft-body)));
   }
 
   html,
@@ -58,6 +50,7 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'lausanna';
     src: url('/fonts/Lausanne-300.otf');
+ 
   }
 
   body {

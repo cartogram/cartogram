@@ -67,7 +67,7 @@ interface Props extends StyledProps {
 }
 
 function Item({item: {title, permalink, ...rest}}: Props) {
-  const textMarkup = <Text>{title}</Text>;
+  const textMarkup = <Text as="span">{title}</Text>;
 
   const linkMarkup = permalink ? (
     <A external href={permalink} {...rest}>

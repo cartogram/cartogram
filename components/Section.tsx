@@ -13,6 +13,10 @@ const StyledSection = styled.section`
   align-items: center;
   flex-direction: column;
 
+  @media ${respond.xs} {
+    margin: ${props => `${props.theme.emSizes[8]}`};
+  }
+
   @media ${respond.md} {
     margin: ${props => `${props.theme.emSizes[10]}`};
   }

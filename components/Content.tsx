@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {textStyles, mediumStyles, smallStyles} from './Text';
+import {textStyles, largeStyles, smallStyles} from './Text';
 import {anchorStyles} from './A';
 
 export const Content = styled.section`
@@ -12,12 +12,17 @@ export const Content = styled.section`
     ${textStyles}
 
     &:first-child {
-      ${mediumStyles}
+      ${largeStyles}
     }
   }
 
   small {
     ${smallStyles};
+  }
+
+  strike {
+    text-decoration: wavy line-through;
+    text-decoration-color: black;
   }
 
   a {

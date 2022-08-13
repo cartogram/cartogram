@@ -21,19 +21,18 @@ const StyledWordmark = styled.div`
   justify-content: space-between;
   pointer-events: none;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 const StyledLetter = styled(animated.div)`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 15vw;
 `;
 
 export function Wordmark({active = true}) {
   const size = useWindowSize();
-  const height = size.height - size.height / 3;
+  const height = size.height;
   const color = COLORS[randomNumber(0, COLORS.length - 1, 0.5)];
 
   const letters = Array.from('CARTOGRAM').map((l, index) => (
@@ -46,17 +45,7 @@ export function Wordmark({active = true}) {
     />
   ));
 
-  return (
-    <StyledWordmark
-      style={{
-        top: size.height / 3,
-        height: height,
-        width: size.width,
-      }}
-    >
-      {letters}
-    </StyledWordmark>
-  );
+  return <StyledWordmark>{letters}</StyledWordmark>;
 }
 
 function Letter({letter, height, color, active}) {

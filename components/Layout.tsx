@@ -1,6 +1,5 @@
 import React, {ReactNode} from 'react';
 import styled from 'styled-components';
-import {respond} from 'styles/utils';
 
 interface LayoutProps {
   children: ReactNode;

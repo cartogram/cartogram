@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {threeLiner, professionalLinks, socialLinks, name} from '~/content';
+import {threeLiner, professionalLinks, name} from '~/content';
 
 import {
   Layout,
@@ -30,7 +30,7 @@ export default function Home() {
       </Layout>
       <Footer>
         <Section>
-          <List inline items={[...professionalLinks, ...socialLinks]} />
+          <List inline items={professionalLinks} />
         </Section>
         <Section>
           {' '}
