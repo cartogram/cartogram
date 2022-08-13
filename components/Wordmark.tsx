@@ -20,6 +20,7 @@ const StyledWordmark = styled.div`
   align-items: center;
   justify-content: space-between;
   pointer-events: none;
+  z-index: 0;
 `;
 
 const StyledLetter = styled(animated.div)`

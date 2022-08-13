@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {textStyles} from './Text';
+import {textStyles, mediumStyles, smallStyles} from './Text';
 import {anchorStyles} from './A';
 
 export const Content = styled.section`
@@ -10,6 +10,14 @@ export const Content = styled.section`
 
   p {
     ${textStyles}
+
+    &:first-child {
+      ${mediumStyles}
+    }
+  }
+
+  small {
+    ${smallStyles};
   }
 
   a {

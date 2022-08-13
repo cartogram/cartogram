@@ -1,8 +1,19 @@
 import React from 'react';
 
-import {threeLiner, name} from '~/content';
+import {threeLiner, professionalLinks, socialLinks, name} from '~/content';
 
-import {Layout, Head, A, Text, Content, Wordmark} from '~/components';
+import {
+  Layout,
+  Head,
+  A,
+  Small,
+  Text,
+  Content,
+  Footer,
+  Wordmark,
+  Section,
+  List,
+} from '~/components';
 
 export default function Home() {
   return (
@@ -10,9 +21,24 @@ export default function Home() {
       <Head />
       <Layout>
         <Wordmark />
-        <Text>{name}</Text>
-        <Content dangerouslySetInnerHTML={{__html: threeLiner}} />
+        <Section>
+          <Text>
+            <A>{name}</A>
+          </Text>
+          <Content dangerouslySetInnerHTML={{__html: threeLiner}} />
+        </Section>
       </Layout>
+      <Footer>
+        <Section>
+          <List inline items={[...professionalLinks, ...socialLinks]} />
+        </Section>
+        <Section>
+          {' '}
+          <Small>
+            © {new Date().getFullYear()} Cartogram Inc. All Rights Reserved.
+          </Small>
+        </Section>
+      </Footer>
     </>
   );
 }
