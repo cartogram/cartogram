@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import React from 'react';
 import Link, {LinkProps} from 'next/link';
 import {useRouter} from 'next/router';
@@ -15,13 +15,21 @@ type Props = Omit<LinkProps, 'href'> & {
   onMouseOut?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 };
 
-const StyledA = styled.a<{current?: boolean}>`
-  cursor: ${({href, current}) => (current || !href ? 'default' : 'pointer')};
+export const anchorStyles = css`
   color: ${props => props.theme.primaryColor};
   text-decoration: underline;
   background: none;
   padding: 0;
   cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
+const StyledA = styled.a<{current?: boolean}>`
+  cursor: ${({href, current}) => (current || !href ? 'default' : 'pointer')};
+  ${anchorStyles};
 
   &:hover {
     text-decoration: ${({current, href, onClick}) =>

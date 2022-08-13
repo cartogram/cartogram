@@ -1,16 +1,18 @@
 import styled from 'styled-components';
-import {respond} from 'styles/utils';
+import {textStyles} from './Text';
+import {anchorStyles} from './A';
 
 export const Content = styled.section`
-  padding: ${props => `${props.theme.emSizes[6]}`};
-  width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  position: relative;
+  justify-content: flex-start;
+  width: 100%;
 
-  @media ${respond.md} {
-    padding: ${props => `${props.theme.emSizes[10]}`};
-    padding-bottom: ${props => `${props.theme.emSizes[8]}`};
+  p {
+    ${textStyles}
+  }
+
+  a {
+    ${anchorStyles}
   }
 `;
