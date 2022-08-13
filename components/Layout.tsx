@@ -3,15 +3,16 @@ import styled from 'styled-components';
 
 interface LayoutProps {
   children: ReactNode;
+  height: number;
 }
 
-const StyledLayout = styled.main`
+const StyledLayout = styled.main<LayoutProps>`
   overflow: hidden;
-  min-height: 100vh;
   width: 100%;
   position: relative;
+  height: ${props => `${props.height}px`};
 `;
 
-export function Layout({children}: LayoutProps) {
-  return <StyledLayout>{children}</StyledLayout>;
+export function Layout({children, height}: LayoutProps) {
+  return <StyledLayout height={height}>{children}</StyledLayout>;
 }

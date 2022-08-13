@@ -14,13 +14,16 @@ import {
   Section,
   List,
 } from '~/components';
+import {useWindowSize} from '~/hooks';
 
 export default function Home() {
+  const size = useWindowSize();
+
   return (
     <>
       <Head />
-      <Layout>
-        <Wordmark />
+      <Layout height={size.height}>
+        <Wordmark height={size.height} />
         <Section>
           <Text>
             <A>{name}</A>

@@ -30,9 +30,7 @@ const StyledLetter = styled(animated.div)`
   font-size: 15vw;
 `;
 
-export function Wordmark({active = true}) {
-  const size = useWindowSize();
-  const height = size.height;
+export function Wordmark({height, active = true}) {
   const color = COLORS[randomNumber(0, COLORS.length - 1, 0.5)];
 
   const letters = Array.from('CARTOGRAM').map((l, index) => (
