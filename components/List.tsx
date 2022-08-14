@@ -36,13 +36,21 @@ interface StyledProps {
 const StyledItem = styled.li<StyledProps>`
   list-style: none;
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
-  align-items: baseline;
+  justify-content: flex-start;
+  align-items: center;
   padding-right: 3em;
   position: relative;
   white-space: nowrap;
   width: 50%;
+`;
+
+const StyledIcon = styled.span<StyledProps>`
+  font-size: var(--ft-size-medium);
+  line-height: 0;
+  position: relative;
+  top: 2px;
+  padding-right: 4px;
 `;
 
 interface Item {
@@ -77,5 +85,12 @@ function Item({item: {title, permalink, ...rest}}: Props) {
     textMarkup
   );
 
-  return <StyledItem>{linkMarkup}</StyledItem>;
+  const IconMarkup = <StyledIcon>➪</StyledIcon>;
+
+  return (
+    <StyledItem>
+      {IconMarkup}
+      {linkMarkup}
+    </StyledItem>
+  );
 }

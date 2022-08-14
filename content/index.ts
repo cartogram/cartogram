@@ -11,7 +11,7 @@ export const threeLiner = `
   <p>Berlin-based <strike>designer</strike> developer,<br/>builder of interfaces, usually for screens.</p>
   <p>
     Currently working on <a href="https://github.com/shopify/hydrogen">Hydrogen</a> at Shopify,<br />
-    <a target="_blank" href="https://pawzzles.cat">Pawzzles</a> and <a target="_blank" href="https://fondfolio.com">Fondfolio</a> with <a target="_blank" href="https://www.fimcd.ca/">Fiona</a>.
+    <a target="_blank" href="https://pawzzles.cat">Pawzzles</a> and <a target="_blank" href="https://fondfolio.com">Fondfolio</a> on my own time.
   </p>
 `;
 
@@ -25,7 +25,7 @@ export const professionalLinks = [
     permalink: 'https://instagram.com/cartogram',
   },
   {
-    title: 'Download CV',
+    title: 'Read CV',
     permalink: 'cv.pdf',
   },
   {
