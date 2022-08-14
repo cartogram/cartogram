@@ -29,13 +29,13 @@ export function Head() {
         <meta name="og:description" content={description} />
 
         {/* Meta Tags for HTML pages on Mobile */}
-        {/* <meta name="format-detection" content="telephone=yes"/>
-            <meta name="HandheldFriendly" content="true"/>  */}
+        <link rel="manifest" href="/manifest.json" />
         <meta
           name="viewport"
           content="width=device-width, minimum-scale=1, initial-scale=1.0"
         />
         <meta name="theme-color" content="#000" />
+
         <link
           rel="icon"
           type="image/svg+xml"
