@@ -20,18 +20,18 @@ export const professionalLinks = [
     title: 'Say hello!',
     permalink: 'mailto:mseccafien@gmail.com',
   },
-  // {
-  //   title: 'Instagram',
-  //   permalink: 'https://instagram.com/cartogram',
-  // },
+  {
+    title: 'GitHub',
+    permalink: 'https://github.com/cartogram',
+  },
   {
     title: 'View résumé',
     permalink: 'matt-seccafien-resume-2022.pdf',
   },
-  // {
-  //   title: 'GitHub',
-  //   permalink: 'https://github.com/cartogram',
-  // },
+  {
+    title: 'Instagram',
+    permalink: 'https://instagram.com/cartogram',
+  },
 ];
 
 export const copyright = `© ${new Date().getFullYear()} <a class="link" href="http://cartogram.ca">Cartogram Inc.</a> <span class="dash">―</span> All Rights Reserved.`;
