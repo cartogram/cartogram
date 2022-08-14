@@ -25,7 +25,7 @@ const StyledWordmark = styled.div`
   height: 100%;
 `;
 
-const StyledLetter = styled(animated.div)<{
+const StyledLetter = styled.div<{
   layer: number;
   shadowcolor: number[];
   color: number[];
@@ -37,10 +37,10 @@ const StyledLetter = styled(animated.div)<{
   text-shadow: ${props => `-1px -1px 0 rgba(${props.shadowcolor}),
   1px -1px 0 rgba(${props.shadowcolor}),
   -1px 1px 0 rgba(${props.shadowcolor}),
-   1px 1px 0 rgba(${props.shadowcolor})`};
+   1px 1px 0 rgba(${props.shadowcolor});`};
 `;
 
-const StyledWord = styled.div`
+const StyledLetterGroup = styled.span`
   position: relative;
   display: flex;
   align-items: center;
@@ -48,7 +48,10 @@ const StyledWord = styled.div`
 `;
 
 export function Wordmark({height, active = true}) {
-  const color = COLORS[randomNumber(0, COLORS.length - 1)];
+  const [color, setColor] = useState(COLORS[0]);
+  useEffect(() => {
+    setColor(COLORS[randomNumber(0, COLORS.length - 1)]);
+  }, [setColor]);
 
   const letters = Array.from('CARTOGRAM').map((l, index) => (
     <Letter
@@ -64,16 +67,19 @@ export function Wordmark({height, active = true}) {
 }
 
 function Letter({letter, height, color, active}) {
-  const max = height;
-  const [vertical, setVertical] = useState(randomNumber(0, max, 0.5));
+  const [vertical, setVertical] = useState(10);
 
+  useEffect(() => {
+    setVertical(randomNumber(0, height, 0.5));
+  }, [setVertical, height]);
   useInterval(
     () => {
-      setVertical(randomNumber(0, max, 0.5));
+      setVertical(randomNumber(0, height, 0.5));
     },
-    active && max ? 1500 : null,
+    active && height ? 1500 : null,
   );
 
+  // console.log(`vertical ${vertical}`);
   const trail = useTrail(6, {
     config: {
       mass: 4,
@@ -88,7 +94,7 @@ function Letter({letter, height, color, active}) {
   });
 
   return (
-    <StyledWord>
+    <StyledLetterGroup>
       {trail.map((props, index) => {
         const styleProps =
           index === 0
@@ -103,8 +109,10 @@ function Letter({letter, height, color, active}) {
                 layer: trail.length - index,
               };
 
+        // console.log(props.translateY.get());
         return (
           <StyledLetter
+            as={animated.div}
             key={index}
             style={props}
             layer={styleProps.layer}
@@ -115,7 +123,7 @@ function Letter({letter, height, color, active}) {
           </StyledLetter>
         );
       })}
-    </StyledWord>
+    </StyledLetterGroup>
   );
 }
 

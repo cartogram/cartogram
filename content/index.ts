@@ -1,8 +1,9 @@
-// eslint-disable-next-line no-process-env
-export const title = 'Cartogram';
+export const aka = 'Cartogram';
 export const firstName = 'Matt';
 export const lastName = 'Seccafien';
 export const name = `${firstName} ${lastName}`;
+export const title = `${name} aka ${aka} ― Berlin-based creative web developer`;
+export const description = `${name} aka ${aka} ― Berlin-based developer, builder of interfaces, usually for screens. Currently working on Hydrogen at Shopify, Pawzzles and Fondfolio with Fiona. Say hello!`;
 
 export const twoLiner = `
   <p>Berlin-based <strike>designer</strike> developer,<br/>builder of interfaces, usually for screens.</p>`;
@@ -13,9 +14,10 @@ export const threeLiner = `
     <a target="_blank" href="https://pawzzles.cat">Pawzzles</a> and <a target="_blank" href="https://fondfolio.com">Fondfolio</a> with <a target="_blank" href="https://www.fimcd.ca/">Fiona</a>.
   </p>
 `;
+
 export const professionalLinks = [
   {
-    title: 'Say hello*',
+    title: 'Say hello',
     permalink: 'mailto:mseccafien@gmail.com',
   },
   {

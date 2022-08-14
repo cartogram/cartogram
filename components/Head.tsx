@@ -1,6 +1,7 @@
 import NextHead from 'next/head';
 
-const titleDefault = 'Cartogram';
+const titleDefault =
+  'Matt Seccafien (aka Cartogram) - Berlin-based creative web developer';
 const url = 'https://cartogram.ca';
 const description = '';
 const author = 'Author';
@@ -20,10 +21,7 @@ export function Head({title = titleDefault}) {
         {/* Search Engine Optimization Meta Tags */}
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta
-          name="keywords"
-          content="Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist"
-        />
+        <meta name="keywords" content="Software Engineer" />
         <meta name="robots" content="index,follow" />
         <meta name="distribution" content="web" />
         {/*
@@ -32,33 +30,8 @@ export function Head({title = titleDefault}) {
         <meta name="og:title" content={title} />
         <meta name="og:type" content="site" />
         <meta name="og:url" content={url} />
-        <meta name="og:image" content={'/icons/share.png'} />
         <meta name="og:site_name" content={title} />
         <meta name="og:description" content={description} />
-
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <link
-          rel="apple-touch-icon"
-          sizes="16x16"
-          href="/icons/favicon-16x16.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="32x32"
-          href="/icons/favicon-32x32.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/icons/apple-touch-icon.png"
-        />
-        <link rel="manifest" href="/manifest.json" />
-        <link
-          rel="mask-icon"
-          color="#000000"
-          href="/icons/safari-pinned-tab.svg"
-        />
-        <link rel="apple-touch-startup-image" href="/startup.png" />
 
         {/* Meta Tags for HTML pages on Mobile */}
         {/* <meta name="format-detection" content="telephone=yes"/>
@@ -68,7 +41,11 @@ export function Head({title = titleDefault}) {
           content="width=device-width, minimum-scale=1, initial-scale=1.0"
         />
         <meta name="theme-color" content="#000" />
-        <link rel="shortcut icon" href="/icons/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2290%22>👻</text></svg>"
+        />
 
         {/*
           Twitter Summary card
