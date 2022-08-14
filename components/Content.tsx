@@ -21,7 +21,7 @@ export const Content = styled.section`
   }
 
   strike {
-    text-decoration: wavy line-through;
+    text-decoration: line-through;
     text-decoration-color: black;
   }
 

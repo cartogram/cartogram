@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     --space-1rem: 1em;
-    --space-05rem: 0.6em;
+    --space-05rem: 0.5em;
     font-family: ${theme.fontFamilySans.name};
     font-weight: ${theme.fontFamilySans.weight};
     font-size: var(--ft-size-body);
@@ -45,12 +45,6 @@ const GlobalStyle = createGlobalStyle`
   *:before,
   *:after {
     ${reset}
-  }
-
-  @font-face {
-    font-family: 'lausanna';
-    src: url('/fonts/Lausanne-300.otf');
- 
   }
 
   body {

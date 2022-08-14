@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'lausanna';
+  src: url('/fonts/Lausanne-300.otf');
+  font-display: fallback;
+}

@@ -2,7 +2,7 @@ import React, {useState, useLayoutEffect, useRef, useEffect} from 'react';
 import styled from 'styled-components';
 import {useTrail, animated} from 'react-spring';
 
-import {useWindowSize, useInterval} from '~/hooks';
+import {useInterval} from '~/hooks';
 
 const COLORS = [
   [147, 56, 42, 1],
@@ -25,13 +25,30 @@ const StyledWordmark = styled.div`
   height: 100%;
 `;
 
-const StyledLetter = styled(animated.div)`
+const StyledLetter = styled(animated.div)<{
+  layer: number;
+  shadowcolor: number[];
+  color: number[];
+}>`
   position: absolute;
   font-size: 15vw;
+  color: ${props => `rgba(${props.color})`};
+  z-index: ${props => props.layer};
+  text-shadow: ${props => `-1px -1px 0 rgba(${props.shadowcolor}),
+  1px -1px 0 rgba(${props.shadowcolor}),
+  -1px 1px 0 rgba(${props.shadowcolor}),
+   1px 1px 0 rgba(${props.shadowcolor})`};
+`;
+
+const StyledWord = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export function Wordmark({height, active = true}) {
-  const color = COLORS[randomNumber(0, COLORS.length - 1, 0.5)];
+  const color = COLORS[randomNumber(0, COLORS.length - 1)];
 
   const letters = Array.from('CARTOGRAM').map((l, index) => (
     <Letter
@@ -71,41 +88,34 @@ function Letter({letter, height, color, active}) {
   });
 
   return (
-    <div
-      style={{
-        position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <StyledWord>
       {trail.map((props, index) => {
-        const commonStyle = {
-          color: `rgba(${color})`,
-          zIndex: trail.length,
-          textShadow: `-1px -1px 0 rgba(${color}),
-          1px -1px 0 rgba(${color}),
-          -1px 1px 0 rgba(${color}),
-           1px 1px 0 rgba(${color})`,
-        };
-
-        const outlineStyle =
+        const styleProps =
           index === 0
-            ? {}
+            ? {
+                layer: trail.length,
+                shadowColor: color,
+                color,
+              }
             : {
-                color: 'white',
-                zIndex: trail.length - index,
+                color: [255, 255, 255, 1],
+                shadowColor: color,
+                layer: trail.length - index,
               };
+
         return (
           <StyledLetter
             key={index}
-            style={{...commonStyle, ...outlineStyle, ...props}}
+            style={props}
+            layer={styleProps.layer}
+            color={styleProps.color}
+            shadowcolor={styleProps.shadowColor}
           >
             {letter}
           </StyledLetter>
         );
       })}
-    </div>
+    </StyledWord>
   );
 }
 

@@ -15,7 +15,7 @@ export const threeLiner = `
 `;
 export const professionalLinks = [
   {
-    title: 'Say hello',
+    title: 'Say hello*',
     permalink: 'mailto:mseccafien@gmail.com',
   },
   {
@@ -31,3 +31,5 @@ export const professionalLinks = [
     permalink: 'https://github.com/cartogram',
   },
 ];
+
+export const copyright = `© ${new Date().getFullYear()} Cartogram Inc. ― All Rights Reserved.`;

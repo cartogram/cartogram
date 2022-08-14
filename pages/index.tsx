@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {threeLiner, professionalLinks, name} from '~/content';
+import {threeLiner, professionalLinks, name, copyright} from '~/content';
 
 import {
   Layout,
@@ -36,10 +36,7 @@ export default function Home() {
           <List inline items={professionalLinks} />
         </Section>
         <Section>
-          {' '}
-          <Small>
-            © {new Date().getFullYear()} Cartogram Inc. All Rights Reserved.
-          </Small>
+          <Small>{copyright}</Small>
         </Section>
       </Footer>
     </>
