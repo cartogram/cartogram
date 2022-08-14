@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
   }
 
   body {
