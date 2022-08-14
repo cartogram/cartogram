@@ -52,8 +52,30 @@ const GlobalStyle = createGlobalStyle`
     background: ${theme.siteBackground};
   }
 
+  .dash {
+    position: relative;
+    width: 2em;
+    display: inline-block;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 0;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      border-bottom: 2px solid ;
+    }
+  }
 
+  a {
+    color: black;
 
+    &:hover {
+      text-decoration: none;
+    }
+  }
 
 `;
 

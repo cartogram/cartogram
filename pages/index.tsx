@@ -33,10 +33,10 @@ export default function Home() {
       </Layout>
       <Footer>
         <Section>
-          <List inline items={professionalLinks} />
+          <List items={professionalLinks} />
         </Section>
         <Section>
-          <Small>{copyright}</Small>
+          <Small dangerouslySetInnerHTML={{__html: copyright}} />
         </Section>
       </Footer>
     </>

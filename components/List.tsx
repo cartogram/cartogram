@@ -44,6 +44,16 @@ const StyledItem = styled.li<StyledProps>`
   width: 50%;
 `;
 
+const StyledIcon = styled.span<StyledProps>`
+  font-size: 115%;
+  position: relative;
+  padding-right: 1.5em;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  transform: translate(-50%, -50%);
+`;
+
 interface Item {
   slug?: string;
   title: string;
@@ -76,5 +86,12 @@ function Item({item: {title, permalink, ...rest}}: Props) {
     textMarkup
   );
 
-  return <StyledItem>{linkMarkup}</StyledItem>;
+  const IconMarkup = <StyledIcon>↪</StyledIcon>;
+
+  return (
+    <StyledItem>
+      {linkMarkup}
+      {IconMarkup}
+    </StyledItem>
+  );
 }
