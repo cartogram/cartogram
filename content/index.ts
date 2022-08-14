@@ -25,11 +25,11 @@ export const professionalLinks = [
     permalink: 'https://instagram.com/cartogram',
   },
   {
-    title: 'Read CV',
+    title: 'Read résumé',
     permalink: 'cv.pdf',
   },
   {
-    title: 'Github',
+    title: 'GitHub',
     permalink: 'https://github.com/cartogram',
   },
 ];

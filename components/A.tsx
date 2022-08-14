@@ -20,7 +20,9 @@ export const anchorStyles = css`
   text-decoration: underline;
   background: none;
   padding: 0;
-  cursor: pointer;
+  cursor: url("/hand.png"), auto !important;
+}
+  
 
   &:hover {
     text-decoration: none;
