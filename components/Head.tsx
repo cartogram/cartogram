@@ -1,12 +1,7 @@
 import NextHead from 'next/head';
+import {name, description, title, url} from '~/content';
 
-const titleDefault =
-  'Matt Seccafien (aka Cartogram) - Berlin-based creative web developer';
-const url = 'https://cartogram.ca';
-const description = '';
-const author = 'Author';
-
-export function Head({title = titleDefault}) {
+export function Head() {
   return (
     <>
       <NextHead>
@@ -14,9 +9,9 @@ export function Head({title = titleDefault}) {
         <meta charSet="utf-8" />
         <meta name="language" content="english" />
         <meta httpEquiv="content-type" content="text/html" />
-        <meta name="author" content={author} />
-        <meta name="designer" content={author} />
-        <meta name="publisher" content={author} />
+        <meta name="author" content={name} />
+        <meta name="designer" content={name} />
+        <meta name="publisher" content={name} />
 
         {/* Search Engine Optimization Meta Tags */}
         <title>{title}</title>
