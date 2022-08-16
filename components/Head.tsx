@@ -1,5 +1,5 @@
 import NextHead from 'next/head';
-import {name, description, title, url} from '~/content';
+import {name, description, title, url, aka} from '~/content';
 
 export function Head() {
   return (
@@ -17,13 +17,20 @@ export function Head() {
         <meta name="robots" content="index,follow" />
         <meta name="distribution" content="web" />
         <meta name="og:title" content={title} />
-        <meta name="og:type" content="site" />
-        <meta name="og:url" content={url} />
-        <meta name="og:site_name" content={title} />
-        <meta name="og:description" content={description} />
-        <meta name="og:image" content="/og-image.jpg" />
-        <meta name="og:image:width" content="1200" />
-        <meta name="og:image:height" content="687" />
+        <meta property="og:type" content="site" />
+        <meta property="og:url" content={url} />
+        <meta property="og:site_name" content={aka} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="687" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content={url.substring(7)} />
+        <meta property="twitter:url" content={url} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="/og-image.jpg" />
+
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="viewport"
