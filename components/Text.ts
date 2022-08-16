@@ -24,6 +24,8 @@ export const Large = styled.p`
 
 export const smallStyles = css`
   width: 100%;
+  white-space: nowrap;
+  display: flex;
   font-size: var(--ft-size-small);
 `;
 

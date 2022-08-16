@@ -54,8 +54,9 @@ const GlobalStyle = createGlobalStyle`
 
   .dash {
     position: relative;
-    width: 2em;
     display: inline-block;
+    text-indent: -9999px;
+    min-width: 2em;
     
     &::before {
       content: '';
@@ -65,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      border-bottom: 2px solid ;
+      border-top: 1px solid ;
     }
   }
 

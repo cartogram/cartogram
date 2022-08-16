@@ -3,7 +3,7 @@ export const firstName = 'Matt';
 export const lastName = 'Seccafien';
 export const name = `${firstName} ${lastName}`;
 export const title = `${name} aka ${aka} ― Berlin-based creative web developer`;
-export const description = `${name} aka ${aka} ― Berlin-based developer, builder of interfaces, usually for screens. Currently working on Hydrogen at Shopify, Pawzzles and Fondfolio with Fiona. Say hello!`;
+export const description = `${name} aka ${aka} ― Berlin-based developer, builder of interfaces, usually for screens. Currently working on Hydrogen at Shopify, Pawzzles and Fondfolio with on my own time. Say hello!`;
 export const url = 'https://cartogram.ca';
 export const twoLiner = `
   <p>Berlin-based <strike>designer</strike> developer,<br/>builder of interfaces, usually for screens.</p>`;
@@ -34,4 +34,4 @@ export const professionalLinks = [
   },
 ];
 
-export const copyright = `© ${new Date().getFullYear()} <a class="link" href="http://cartogram.ca">Cartogram Inc.</a> <span class="dash">―</span> All Rights Reserved.`;
+export const copyright = `© ${new Date().getFullYear()}―<a class="link" href="http://cartogram.ca">Cartogram Inc.</a> <span class="dash">―</span> All Rights Reserved.`;
