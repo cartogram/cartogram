@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     --space-1rem: 1em;
     --space-05rem: 0.5em;
-    font-family: ${theme.fontFamilySans.name};
+    font-family: ${theme.fontFamilySans.name}, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-weight: ${theme.fontFamilySans.weight};
     font-size: var(--ft-size-body);
     font-style: normal;
