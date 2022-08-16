@@ -4,16 +4,6 @@ import {useTrail, animated} from 'react-spring';
 
 import {useInterval} from '~/hooks';
 
-const COLORS = [
-  [147, 56, 42, 1],
-  [72, 184, 204, 1],
-  [72, 203, 164, 1],
-  [243, 89, 255, 1],
-  [151, 169, 147, 1],
-  [9, 38, 3, 1],
-  [0, 68, 82, 1],
-];
-
 const StyledWordmark = styled.div`
   position: absolute;
   display: flex;
@@ -47,12 +37,7 @@ const StyledLetterGroup = styled.span`
   justify-content: center;
 `;
 
-export function Wordmark({height, active = true}) {
-  const [color, setColor] = useState(COLORS[0]);
-  useEffect(() => {
-    setColor(COLORS[randomNumber(0, COLORS.length - 1)]);
-  }, [setColor]);
-
+export function Wordmark({height, color, active = true}) {
   const letters = Array.from('CARTOGRAM').map((l, index) => (
     <Letter
       height={height}

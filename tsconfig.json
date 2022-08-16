@@ -19,6 +19,7 @@
       "~/components": ["components"],
       "~/hooks": ["hooks"],
       "~/styles": ["styles"],
+      "~/utils": ["utils"],
       "~/content": ["content"]
     }
   },

@@ -57,6 +57,8 @@ const GlobalStyle = createGlobalStyle`
     display: inline-block;
     text-indent: -9999px;
     min-width: 2em;
+    max-width: 12em;
+    flex: 1;
     
     &::before {
       content: '';
@@ -66,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      border-top: 1px solid ;
+      border-top: 1px solid var(--color-primary);
     }
   }
 

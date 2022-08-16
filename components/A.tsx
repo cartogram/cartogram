@@ -20,6 +20,7 @@ export const anchorStyles = css`
   text-decoration: underline;
   background: none;
   padding: 0;
+  text-decoration-color: var(--color-primary);
 
   &:hover {
     text-decoration: none;
