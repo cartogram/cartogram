@@ -11,15 +11,14 @@ export default function Colophon() {
     <Layout height={size.height}>
       <Section vertical small>
         <Large>
-          Built between runs around
-          <br />
+          Built between runs in{' '}
           <A
             external
             href="https://www.google.com/maps/place/Tempelhofer+Feld/@52.475391,13.401893,15z/data=!4m2!3m1!1s0x0:0x88898e99acbb718b?sa=X&ved=2ahUKEwizv7mTzdX5AhVyQ_EDHT4NDN0Q_BJ6BAhsEAU"
           >
             Templehofer Feld
-          </A>{' '}
-          in Berlin.
+          </A>
+          .
         </Large>
         <Text>Coded with curiosity using VS Code on a MacBook Air.</Text>
         <Text pad>
@@ -42,7 +41,7 @@ export default function Colophon() {
         </Text>
         <List pad items={stackLinks} />
         <Text>
-          You can view the{' '}
+          View the{' '}
           <A external href="https://github.com/cartogram/cartogram">
             full source code
           </A>{' '}

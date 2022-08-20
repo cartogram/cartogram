@@ -44,6 +44,10 @@ export const Section = styled.section<SectionProps>`
       }
 
       @media ${respond.sm} {
+        width: 60%;
+      }
+
+      @media ${respond.md} {
         width: 40%;
       }
     `}
