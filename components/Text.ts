@@ -21,7 +21,7 @@ export const largeStyles = css`
   width: 100%;
   text-indent: 0;
   font-size: var(--ft-size-large);
-  margin: var(--space-05rem) 0;
+  margin: 0 0 var(--space-05rem) 0;
 `;
 
 export const Large = styled.p`

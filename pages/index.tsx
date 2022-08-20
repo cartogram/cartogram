@@ -12,7 +12,7 @@ export default function Home() {
     <Layout height={size.height}>
       <Wordmark height={size.height} />
       <Section vertical>
-        <Text>
+        <Text pad>
           <A href="/">{name}</A>
         </Text>
         <Content dangerouslySetInnerHTML={{__html: threeLiner}} />

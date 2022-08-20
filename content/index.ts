@@ -15,12 +15,6 @@ export const threeLiner = `
   </p>
 `;
 
-export const colophon = `
-  <p>Coded with ♥ using VS Code on a MacBook Air (M2, 2022).</p>
-  <p>Typeset in Lausanne with permission from <a href="https://www.nizarkazan.ch/">Nizar Kazan</a>.</p>
-  <p>Written in TypeScript and React.</p>
-`;
-
 export const professionalLinks = [
   {
     title: 'Say hello!',
@@ -37,5 +31,28 @@ export const professionalLinks = [
   {
     title: 'Instagram',
     permalink: 'https://instagram.com/cartogram',
+  },
+];
+
+export const stackLinks = [
+  {
+    title: 'React-Spring',
+    permalink: 'https://react-spring.dev/',
+  },
+  {
+    title: 'Styled-components',
+    permalink: 'https://styled-components.com/',
+  },
+  {
+    title: 'Next.js',
+    permalink: 'https://nextjs.org/',
+  },
+  {
+    title: 'Prettier',
+    permalink: 'https://prettier.io/',
+  },
+  {
+    title: 'ESLint',
+    permalink: 'https://eslint.org/',
   },
 ];

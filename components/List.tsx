@@ -4,16 +4,19 @@ import styled from 'styled-components';
 interface ListProps {
   items: string[] | Item[];
   inline?: boolean;
+  pad?: boolean;
 }
 
-const StyledList = styled.ul<Pick<ListProps, 'inline'>>`
+const StyledList = styled.ul<Pick<ListProps, 'inline' | 'pad'>>`
   display: flex;
   width: 100%;
   flex-direction: ${props => (props.inline ? 'row' : 'column')};
   flex-wrap: wrap;
+
+  ${props => (props.pad ? `padding-bottom: ${props.theme.emSizes[2]};` : '')}
 `;
 
-export function List({items, inline}: ListProps) {
+export function List({items, pad, inline}: ListProps) {
   const itemsMarkup = items.map((item, index) => {
     if (typeof item === 'string') {
       return (
@@ -23,7 +26,11 @@ export function List({items, inline}: ListProps) {
     return <Item key={`${item.title}--${index}`} item={item} />;
   });
 
-  return <StyledList inline={inline}>{itemsMarkup}</StyledList>;
+  return (
+    <StyledList pad={pad} inline={inline}>
+      {itemsMarkup}
+    </StyledList>
+  );
 }
 
 import {Text} from './Text';

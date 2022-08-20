@@ -32,6 +32,7 @@ const StyledA = styled.a<{current?: boolean}>`
   ${anchorStyles};
 
   text-decoration: ${({current}) => (current ? 'none' : 'underline')};
+  text-decoration-color: var(--color-primary);
 
   &:hover {
     text-decoration: ${({href, onClick}) =>
