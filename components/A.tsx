@@ -16,7 +16,6 @@ type Props = Omit<LinkProps, 'href'> & {
 };
 
 export const anchorStyles = css`
-  color: ${props => props.theme.primaryColor};
   text-decoration: underline;
   background: none;
   padding: 0;
@@ -29,17 +28,21 @@ export const anchorStyles = css`
 
 const StyledA = styled.a<{current?: boolean}>`
   cursor: ${({href, current}) => (current || !href ? 'default' : 'pointer')};
+
   ${anchorStyles};
 
+  text-decoration: ${({current}) => (current ? 'none' : 'underline')};
+
   &:hover {
-    text-decoration: ${({current, href, onClick}) =>
-      current || (!onClick && !href) ? 'underline' : 'none'};
+    text-decoration: ${({href, onClick}) =>
+      !onClick && !href ? 'underline' : 'none'};
   }
 `;
 
 export function A({external, as, href, children, ...rest}: Props) {
   const router = useRouter();
-  const current = router.asPath === href;
+
+  const current = router.asPath !== '/' && router.asPath === href;
 
   if (!href) {
     return (

@@ -1,10 +1,16 @@
 import styled, {css} from 'styled-components';
 
-export const textStyles = css`
+interface TextProps {
+  pad?: boolean;
+}
+
+export const textStyles = css<TextProps>`
   width: 100%;
   font-weight: normal;
   display: block;
   font-size: var(--ft-size-body);
+
+  ${props => (props.pad ? `padding-bottom: ${props.theme.emSizes[2]};` : '')}
 `;
 
 export const Text = styled.p`

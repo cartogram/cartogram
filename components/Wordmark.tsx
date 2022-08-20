@@ -17,17 +17,17 @@ const StyledWordmark = styled.div`
 
 const StyledLetter = styled.div<{
   layer: number;
-  shadowcolor: number[];
-  color: number[];
+  primaryColor: number[];
 }>`
   position: absolute;
   font-size: 15vw;
-  color: ${props => `rgba(${props.color})`};
+  color: ${props =>
+    props.primaryColor
+      ? `rgba(${props.primaryColor})`
+      : `var(--color-primary)`};
   z-index: ${props => props.layer};
-  text-shadow: ${props => `-1px -1px 0 rgba(${props.shadowcolor}),
-  1px -1px 0 rgba(${props.shadowcolor}),
-  -1px 1px 0 rgba(${props.shadowcolor}),
-   1px 1px 0 rgba(${props.shadowcolor});`};
+  text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary),
+    -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
 `;
 
 const StyledLetterGroup = styled.span`
@@ -37,21 +37,15 @@ const StyledLetterGroup = styled.span`
   justify-content: center;
 `;
 
-export function Wordmark({height, color, active = true}) {
+export function Wordmark({height, active = true}) {
   const letters = Array.from('CARTOGRAM').map((l, index) => (
-    <Letter
-      height={height}
-      active={active}
-      color={color}
-      key={`${l}${index}`}
-      letter={l}
-    />
+    <Letter height={height} active={active} key={`${l}${index}`} letter={l} />
   ));
 
   return <StyledWordmark>{letters}</StyledWordmark>;
 }
 
-function Letter({letter, height, color, active}) {
+function Letter({letter, height, active}) {
   const [vertical, setVertical] = useState(10);
 
   useEffect(() => {
@@ -85,26 +79,21 @@ function Letter({letter, height, color, active}) {
           index === 0
             ? {
                 layer: trail.length,
-                shadowColor: color,
-                color,
+                color: undefined,
               }
             : {
                 color: [255, 255, 255, 1],
-                shadowColor: color,
                 layer: trail.length - index,
               };
 
         // console.log(props.translateY.get());
         return (
           <StyledLetter
-            as={animated.div}
             key={index}
-            style={props}
             layer={styleProps.layer}
-            color={styleProps.color}
-            shadowcolor={styleProps.shadowColor}
+            primaryColor={styleProps.color}
           >
-            {letter}
+            <animated.div style={props}>{letter}</animated.div>
           </StyledLetter>
         );
       })}

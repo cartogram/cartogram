@@ -1,7 +1,20 @@
 import NextHead from 'next/head';
 import {name, description, title, url, aka} from '~/content';
+import {randomNumber} from '~/utils';
+
+const COLORS = [
+  [147, 56, 42, 1],
+  [72, 184, 204, 1],
+  [72, 203, 164, 1],
+  [243, 89, 255, 1],
+  [151, 169, 147, 1],
+  [9, 38, 3, 1],
+  [0, 68, 82, 1],
+];
 
 export function Head() {
+  const color = COLORS[randomNumber(0, COLORS.length - 1)];
+
   return (
     <>
       <NextHead>
@@ -30,7 +43,6 @@ export function Head() {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="/og-image.jpg" />
-
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="viewport"
@@ -38,6 +50,11 @@ export function Head() {
         />
         <meta name="theme-color" content="#000" />
       </NextHead>
+      <style global jsx>{`
+        :root {
+          --color-primary: rgba(${color});
+        }
+      `}</style>
     </>
   );
 }

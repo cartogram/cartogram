@@ -22,7 +22,7 @@ export const Content = styled.section`
 
   strike {
     text-decoration: line-through;
-    text-decoration-color: black;
+    text-decoration-color: var(--color-primary);
   }
 
   a {

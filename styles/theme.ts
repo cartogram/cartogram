@@ -20,7 +20,7 @@ const remSizes = sizes.map(remCalc);
 
 const theme: DefaultTheme = {
   siteBackground: `url(/noise.png) `,
-  primaryColor: '#000',
+  primaryColor: '#060e3c',
   fontFamilySans: {
     name: 'lausanna',
     weight: 300,

@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
+    color: ${theme.primaryColor};
   }
 
   *,
@@ -73,11 +74,15 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: black;
+    color: ${theme.primaryColor};
 
     &:hover {
       text-decoration: none;
     }
+  }
+
+  .color--primary {
+    color: var(--color-primary);
   }
 
 `;
