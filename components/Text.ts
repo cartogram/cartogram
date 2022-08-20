@@ -33,6 +33,7 @@ export const smallStyles = css`
   white-space: nowrap;
   display: flex;
   font-size: var(--ft-size-small);
+  flex-wrap: warp;
 `;
 
 export const Small = styled.p`

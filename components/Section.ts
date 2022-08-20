@@ -13,7 +13,7 @@ export const Section = styled.section<SectionProps>`
   display: flex;
   align-items: center;
   flex-direction: ${({vertical}) => (vertical ? 'column' : 'row')};
-  margin: ${props => `0 ${props.theme.emSizes[6]} ${props.theme.emSizes[6]}`};
+  margin: ${props => `${props.theme.emSizes[6]} ${props.theme.emSizes[6]}`};
 
   @media ${respond.xs} {
     margin: ${props => `0 ${props.theme.emSizes[8]} ${props.theme.emSizes[8]}`};
