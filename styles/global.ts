@@ -77,7 +77,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.primaryColor};
 
     &:hover {
-      text-decoration: none;
+      text-decoration: line-through;
+
     }
   }
 

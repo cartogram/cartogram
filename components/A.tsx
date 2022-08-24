@@ -22,7 +22,8 @@ export const anchorStyles = css`
   text-decoration-color: var(--color-primary);
 
   &:hover {
-    text-decoration: none;
+    text-decoration: line-through;
+    text-decoration-color: var(--color-primary);
   }
 `;
 
@@ -31,12 +32,13 @@ const StyledA = styled.a<{current?: boolean}>`
 
   ${anchorStyles};
 
-  text-decoration: ${({current}) => (current ? 'none' : 'underline')};
+  text-decoration: ${({current}) => (current ? 'line-through' : 'underline')};
   text-decoration-color: var(--color-primary);
 
   &:hover {
     text-decoration: ${({href, onClick}) =>
-      !onClick && !href ? 'underline' : 'none'};
+      !onClick && !href ? 'underline' : 'strick-through'};
+    text-decoration-color: var(--color-primary);
   }
 `;
 

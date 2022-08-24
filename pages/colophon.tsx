@@ -20,9 +20,9 @@ export default function Colophon() {
           </A>
           .
         </Large>
-        <Text>Coded with curiosity using VS Code on a MacBook Air.</Text>
         <Text pad>
-          Set in Lausanne type with permission from{' '}
+          Coded with curiosity using VS Code on a MacBook Air. Set in Lausanne
+          type with permission from{' '}
           <A external href="https://www.nizarkazan.ch/">
             Nizar Kazan
           </A>
@@ -37,7 +37,7 @@ export default function Colophon() {
           <A external href="https://reactjs.org/">
             React
           </A>
-          -oriented, open-source packages including but not limited to:
+          -oriented, open-source packages, including but not limited to:
         </Text>
         <List pad items={stackLinks} />
         <Text>

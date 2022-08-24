@@ -49,6 +49,22 @@ const StyledItem = styled.li<StyledProps>`
   position: relative;
   white-space: nowrap;
   width: 50%;
+
+  a {
+    transform: translateX(01em);
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1em;
+      height: 0.1rem;
+      background: var(--color-primary);
+      transform: translate(-1em, -50%);
+      transform-origin: left center;
+    }
+  }
 `;
 
 interface Item {
