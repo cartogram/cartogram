@@ -78,7 +78,6 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover {
       text-decoration: line-through;
-
     }
   }
 
