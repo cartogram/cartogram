@@ -26,7 +26,7 @@ export const professionalLinks = [
   },
   {
     title: 'View résumé',
-    permalink: 'Matthew Seccafien-CV-April2022.pdf',
+    permalink: 'Matthew Seccafien-CV-2023.pdf',
   },
   {
     title: 'Instagram',
