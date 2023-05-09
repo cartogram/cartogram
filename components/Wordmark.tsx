@@ -1,8 +1,6 @@
 import React, {useState, useLayoutEffect, useRef, useEffect} from 'react';
 import styled from 'styled-components';
-import {useTrail, animated} from 'react-spring';
-
-import {useInterval} from '~/hooks';
+import {Letter} from './Letter';
 
 const StyledWordmark = styled.div`
   position: absolute;
@@ -43,64 +41,4 @@ export function Wordmark({height, active = true}) {
   ));
 
   return <StyledWordmark>{letters}</StyledWordmark>;
-}
-
-function Letter({letter, height, active}) {
-  const [vertical, setVertical] = useState(10);
-
-  useEffect(() => {
-    setVertical(randomNumber(0, height, 0.5));
-  }, [setVertical, height]);
-  useInterval(
-    () => {
-      setVertical(randomNumber(0, height, 0.5));
-    },
-    active && height ? 1500 : null,
-  );
-
-  // console.log(`vertical ${vertical}`);
-  const trail = useTrail(6, {
-    config: {
-      mass: 4,
-      tension: 1000,
-      friction: 200,
-      precision: 0.001,
-      velocity: 1,
-    },
-    translateY: 0,
-    to: {translateY: active ? vertical : 0},
-    delay: 0,
-  });
-
-  return (
-    <StyledLetterGroup>
-      {trail.map((props, index) => {
-        const styleProps =
-          index === 0
-            ? {
-                layer: trail.length,
-                color: undefined,
-              }
-            : {
-                color: [255, 255, 255, 1],
-                layer: trail.length - index,
-              };
-
-        // console.log(props.translateY.get());
-        return (
-          <StyledLetter
-            key={index}
-            layer={styleProps.layer}
-            primaryColor={styleProps.color}
-          >
-            <animated.div style={props}>{letter}</animated.div>
-          </StyledLetter>
-        );
-      })}
-    </StyledLetterGroup>
-  );
-}
-
-function randomNumber(min, max, correction = 0) {
-  return Math.floor((Math.random() - correction) * (max - min + 1)) + min;
 }
