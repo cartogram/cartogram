@@ -6,7 +6,7 @@ import {stackLinks} from '~/content';
 export default function Colophon() {
   return (
     <Layout>
-      <Section vertical small>
+      <Section pad vertical small>
         <Large>
           Built between runs in{' '}
           <A
