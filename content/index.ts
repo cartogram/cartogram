@@ -15,6 +15,12 @@ export const threeLiner = `
   </p>
 `;
 
+export const bio = `
+<p>Seeking artful and interesting challenges in software development.</p>
+<p>Cutting my teeth in design and typography to full-stack web development and resiliency, I understand the breadth of problems more than any one facet, and am most valuable to a project when free to choose where to insert myself in the process.</p>
+
+`;
+
 export const professionalLinks = [
   {
     title: 'Say hello',

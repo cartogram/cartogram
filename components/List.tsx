@@ -13,7 +13,7 @@ const StyledList = styled.ul<Pick<ListProps, 'inline' | 'pad'>>`
   flex-direction: ${props => (props.inline ? 'row' : 'column')};
   flex-wrap: wrap;
 
-  ${props => (props.pad ? `padding-bottom: ${props.theme.emSizes[2]};` : '')}
+  ${props => (props.pad ? `padding-bottom: ${props.theme.emSizes[8]};` : '')}
 `;
 
 export function List({items, pad, inline}: ListProps) {

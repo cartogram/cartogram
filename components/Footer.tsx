@@ -8,35 +8,45 @@ import styled from 'styled-components';
 import {respond} from 'styles/utils';
 
 export const StyledFooter = styled.footer`
-  bottom: ${props => `${props.theme.emSizes[6]}`};
   width: 100%;
-  margin: ${props => `0 ${props.theme.emSizes[6]}`};
+  display: block;
+  position: relative;
+  // background: ${props => props.theme.siteBackground};
+
+  padding: ${props => `${props.theme.emSizes[6]} ${props.theme.emSizes[6]}`};
 
   @media ${respond.xs} {
-    width: 80%;
-    margin: ${props => `0 ${props.theme.emSizes[8]}`};
-  }
+    padding: ${props =>
+      `0 ${props.theme.emSizes[8]} ${props.theme.emSizes[8]}`};
 
-  @media ${respond.sm} {
-    width: 40%;
+    &:first-of-type {
+      padding-top: ${props => props.theme.emSizes[10]};
+    }
   }
 
   @media ${respond.md} {
-    margin: ${props => `0 ${props.theme.emSizes[10]}`};
+    padding: ${props =>
+      `0 ${props.theme.emSizes[10]} ${props.theme.emSizes[10]}`};
+
+    &:first-of-type {
+      padding-top: ${props => props.theme.emSizes[10]};
+    }
   }
 `;
 
 export function Footer() {
   return (
-    <Section small>
-      <Small>
-        © {new Date().getFullYear()}
-        <span className="color--primary">―</span>
-        <A href="/">Cartogram Inc.</A>
-        <span className="dash">―</span> All Rights Reserved.
-        <span className="color--primary">―</span>
-        <A href="/colophon">Colophon</A>
-      </Small>
-    </Section>
+    <StyledFooter>
+      <Section small>
+        <Small>
+          © {new Date().getFullYear()}
+          <span className="color--primary">―</span>
+          <A href="/">Cartogram Inc.</A>
+          <span className="dash">―</span> All Rights Reserved.
+          <span className="color--primary">―</span>
+          <A href="/colophon">Colophon</A>
+        </Small>
+      </Section>
+    </StyledFooter>
   );
 }

@@ -6,6 +6,8 @@ interface SectionProps {
   children?: ReactNode;
   vertical?: boolean;
   small?: boolean;
+  pad?: boolean;
+  right?: boolean;
 }
 
 export const Section = styled.section<SectionProps>`
@@ -14,6 +16,8 @@ export const Section = styled.section<SectionProps>`
   align-items: center;
   flex-direction: ${({vertical}) => (vertical ? 'column' : 'row')};
   margin: ${props => `${props.theme.emSizes[6]} ${props.theme.emSizes[6]}`};
+
+  ${props => props.right && `align-self: flex-end;`}
 
   @media ${respond.xs} {
     margin: ${props => `0 ${props.theme.emSizes[8]} ${props.theme.emSizes[8]}`};
@@ -49,6 +53,14 @@ export const Section = styled.section<SectionProps>`
 
       @media ${respond.md} {
         width: 40%;
+      }
+    `}
+  ${props =>
+    !props.pad &&
+    `
+      &,
+      &:first-of-type {
+        margin: 0;
       }
     `}
 `;

@@ -2,17 +2,16 @@ import styled from 'styled-components';
 import {textStyles, largeStyles, smallStyles} from './Text';
 import {anchorStyles} from './A';
 
-export const Content = styled.section`
+export const Content = styled.article`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   width: 100%;
-
   p {
     ${textStyles}
-
+    padding-bottom: ${props => props.theme.emSizes[2]};
     &:first-child {
       ${largeStyles}
+      padding-bottom: 0;
     }
   }
 

@@ -1,25 +1,39 @@
 import React from 'react';
 
-import {threeLiner, professionalLinks, name} from '~/content';
+import {threeLiner, professionalLinks, bio, name} from '~/content';
 
-import {Layout, A, Text, Content, Wordmark, Section, List} from '~/components';
-import {useWindowSize} from '~/hooks';
+import {
+  Layout,
+  Footer,
+  A,
+  Text,
+  Content,
+  Wordmark,
+  Section,
+  List,
+} from '~/components';
 
 export default function Home() {
-  const size = useWindowSize();
-
   return (
-    <Layout height={size.height}>
-      <Wordmark height={size.height} />
-      <Section vertical>
-        <Text pad>
-          <A href="/">{name}</A>
-        </Text>
-        <Content dangerouslySetInnerHTML={{__html: threeLiner}} />
-      </Section>
-      <Section vertical small>
-        <List inline items={professionalLinks} />
-      </Section>
-    </Layout>
+    <>
+      <Layout>
+        <Wordmark />
+        <Section pad vertical>
+          <Text pad>
+            <A href="/">{name}</A>
+          </Text>
+          <Content dangerouslySetInnerHTML={{__html: threeLiner}} />
+        </Section>
+        <Section pad vertical small>
+          <List pad inline items={professionalLinks} />
+        </Section>
+        <Footer />
+      </Layout>
+      {/* <Layout>
+        <Section right pad vertical small>
+          <Content dangerouslySetInnerHTML={{__html: bio}} />
+        </Section>
+      </Layout> */}
+    </>
   );
 }

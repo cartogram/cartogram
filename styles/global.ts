@@ -12,9 +12,9 @@ const GlobalStyle = createGlobalStyle`
 
     --ft-body: 22;
     --ft-size-body: clamp(var(--ft-body-min), var(--ft-body-vw), var(--ft-body-max));
-    
+
     --ft-size-small: 13px;
-    
+
     --ft-size-medium: var(--ft-size-body);
 
     --ft-large: 30;
@@ -50,7 +50,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${theme.siteBackground};
   }
 
   .dash {
@@ -60,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
     min-width: 2em;
     max-width: 12em;
     flex: 1;
-    
+
     &::before {
       content: '';
       position: absolute;
