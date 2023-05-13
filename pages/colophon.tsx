@@ -2,13 +2,10 @@ import React from 'react';
 
 import {Layout, Large, A, List, Text, Section} from '~/components';
 import {stackLinks} from '~/content';
-import {useWindowSize} from '~/hooks';
 
 export default function Colophon() {
-  const size = useWindowSize();
-
   return (
-    <Layout height={size.height}>
+    <Layout>
       <Section vertical small>
         <Large>
           Built between runs in{' '}
