@@ -10,7 +10,7 @@ export const twoLiner = `
 export const threeLiner = `
   <p>Berlin-based <strike>designer</strike> developer,<br/>builder of interfaces, usually for screens.</p>
   <p>
-    Currently working on <a href="https://github.com/shopify/hydrogen">Hydrogen</a> at Shopify,<br />
+    Recently working on <a href="https://github.com/shopify/hydrogen">Hydrogen</a> at Shopify,<br />
     <a target="_blank" href="https://pawzzles.cat">Pawzzles</a> and <a target="_blank" href="https://fondfolio.com">Fondfolio</a> on my own time.
   </p>
 `;
@@ -20,10 +20,15 @@ export const professionalLinks = [
     title: 'Say hello',
     permalink: 'mailto:mseccafien@gmail.com',
   },
+
   {
     title: 'GitHub',
     permalink: 'https://github.com/cartogram',
   },
+  // {
+  //   title: 'Talk',
+  //   permalink: 'https://wa.me/+004917664813086',
+  // },
   {
     title: 'View résumé',
     permalink: 'Matthew Seccafien-CV-2023.pdf',
@@ -32,6 +37,11 @@ export const professionalLinks = [
     title: 'Instagram',
     permalink: 'https://instagram.com/cartogram',
   },
+
+  // {
+  //   title: 'LinkedIn',
+  //   permalink: 'https://www.linkedin.com/in/mattseccafien/',
+  // },
 ];
 
 export const stackLinks = [
