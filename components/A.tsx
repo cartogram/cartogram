@@ -1,7 +1,6 @@
 import styled, {css} from 'styled-components';
 import React from 'react';
 import Link, {LinkProps} from 'next/link';
-import {useRouter} from 'next/router';
 
 type Props = Omit<LinkProps, 'href'> & {
   external?: boolean;
@@ -43,10 +42,6 @@ const StyledA = styled.a<{current?: boolean}>`
 `;
 
 export function A({external, as, href, children, ...rest}: Props) {
-  const router = useRouter();
-
-  const current = router.asPath !== '/' && router.asPath === href;
-
   if (!href) {
     return (
       <StyledA as="span" {...rest}>
@@ -65,9 +60,7 @@ export function A({external, as, href, children, ...rest}: Props) {
 
   return (
     <Link as={as} href={href}>
-      <StyledA current={current} href={href} {...rest}>
-        {children}
-      </StyledA>
+      {children}
     </Link>
   );
 }
