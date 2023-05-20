@@ -1,0 +1,25 @@
+.A {
+  text-decoration: underline;
+  background: none;
+  padding: 0;
+  text-decoration-color: var(--color-primary);
+}
+
+.A:hover {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-primary);
+}
+/* const StyledA = styled.a<{current?: boolean}>`
+   cursor: ${({href, current}) => (current || !href ? 'default' : 'pointer')};
+
+   ${anchorStyles};
+
+   text-decoration: ${({current}) => (current ? 'line-through' : 'underline')};
+   text-decoration-color: var(--color-primary);
+
+   &:hover {
+     text-decoration: ${({href, onClick}) =>
+       !onClick && !href ? 'underline' : 'strick-through'};
+     text-decoration-color: var(--color-primary);
+   }
+ `; */

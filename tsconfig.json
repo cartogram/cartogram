@@ -16,13 +16,19 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "~/components": ["components"],
+      "~/components/*": ["components/*"],
       "~/hooks": ["hooks"],
       "~/styles": ["styles"],
       "~/utils": ["utils"],
       "~/content": ["content"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,21 +1,13 @@
-import React, {useState, useLayoutEffect, useRef, useEffect} from 'react';
-import styled from 'styled-components';
+'use client';
+
 import {Letter} from './Letter';
 import {useWindowSize} from '~/hooks';
 
-const StyledWordmark = styled.div`
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-`;
+import styles from './Wordmark.module.css';
 
 export function Wordmark({active = true}) {
   const size = useWindowSize();
+
   const letters = Array.from('CARTOGRAM').map((l, index) => (
     <Letter
       height={size.height}
@@ -25,5 +17,5 @@ export function Wordmark({active = true}) {
     />
   ));
 
-  return <StyledWordmark>{letters}</StyledWordmark>;
+  return <div className={styles.Wordmark}>{letters}</div>;
 }

@@ -1,6 +1,7 @@
-import styled, {css} from 'styled-components';
-import React from 'react';
+// import styled, {css} from 'styled-components';
+// import React from 'react';
 import Link, {LinkProps} from 'next/link';
+import styles from './A.module.css';
 
 type Props = Omit<LinkProps, 'href'> & {
   external?: boolean;
@@ -14,52 +15,25 @@ type Props = Omit<LinkProps, 'href'> & {
   onMouseOut?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 };
 
-export const anchorStyles = css`
-  text-decoration: underline;
-  background: none;
-  padding: 0;
-  text-decoration-color: var(--color-primary);
-
-  &:hover {
-    text-decoration: line-through;
-    text-decoration-color: var(--color-primary);
-  }
-`;
-
-const StyledA = styled.a<{current?: boolean}>`
-  cursor: ${({href, current}) => (current || !href ? 'default' : 'pointer')};
-
-  ${anchorStyles};
-
-  text-decoration: ${({current}) => (current ? 'line-through' : 'underline')};
-  text-decoration-color: var(--color-primary);
-
-  &:hover {
-    text-decoration: ${({href, onClick}) =>
-      !onClick && !href ? 'underline' : 'strick-through'};
-    text-decoration-color: var(--color-primary);
-  }
-`;
-
 export function A({external, as, href, children, ...rest}: Props) {
   if (!href) {
     return (
-      <StyledA as="span" {...rest}>
+      <span className={styles.A} {...rest}>
         {children}
-      </StyledA>
+      </span>
     );
   }
 
   if (external) {
     return (
-      <StyledA href={href} target="_blank" {...rest}>
+      <a href={href} className={styles.A} target="_blank" {...rest}>
         {children}
-      </StyledA>
+      </a>
     );
   }
 
   return (
-    <Link as={as} href={href}>
+    <Link as={as} className={styles.A} href={href}>
       {children}
     </Link>
   );

@@ -1,0 +1,13 @@
+.Letter {
+  position: absolute;
+  font-size: 15vw;
+  text-shadow: -1px -1px 0 var(--color-primary), 1px -1px 0 var(--color-primary),
+    -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary);
+}
+
+.Group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

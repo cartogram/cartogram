@@ -1,0 +1,38 @@
+.Content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Content p {
+  width: 100%;
+  font-weight: normal;
+  display: block;
+  font-size: var(--ft-size-body);
+  padding-bottom: var(--space-md);
+}
+
+.Content p:first-child {
+  font-size: var(--ft-size-large);
+}
+
+.Content small {
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  font-size: var(--ft-size-small);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-xs);
+}
+
+.Content strike {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-primary);
+}
+
+.Content a {
+  text-decoration: underline;
+  background: none;
+  padding: 0;
+  text-decoration-color: var(--color-primary);
+}

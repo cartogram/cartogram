@@ -1,0 +1,24 @@
+.Text {
+  width: 100%;
+  font-weight: normal;
+  display: block;
+  font-size: var(--ft-size-body);
+}
+
+.small {
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  font-size: var(--ft-size-small);
+  flex-wrap: wrap;
+}
+
+.large {
+  width: 100%;
+  text-indent: 0;
+  font-size: var(--ft-size-large);
+}
+
+.pad {
+  padding-bottom: var(--space-md);
+}

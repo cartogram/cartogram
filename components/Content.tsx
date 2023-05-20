@@ -1,30 +1,14 @@
-import styled from 'styled-components';
-import {textStyles, largeStyles, smallStyles} from './Text';
-import {anchorStyles} from './A';
+import styles from './Content.module.css';
 
-export const Content = styled.article`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  p {
-    ${textStyles}
-    padding-bottom: ${props => props.theme.emSizes[2]};
-    &:first-child {
-      ${largeStyles}
-      padding-bottom: 0;
-    }
-  }
+interface ContentProps {
+  children?: React.ReactNode;
+}
 
-  small {
-    ${smallStyles};
-  }
-
-  strike {
-    text-decoration: line-through;
-    text-decoration-color: var(--color-primary);
-  }
-
-  a {
-    ${anchorStyles}
-  }
-`;
+export const Content = (props: ContentProps) => {
+  return (
+    <article
+      className={styles.Content}
+      dangerouslySetInnerHTML={{__html: props.children || ''}}
+    />
+  );
+};
