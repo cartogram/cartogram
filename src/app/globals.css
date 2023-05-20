@@ -57,7 +57,7 @@ export const respond = {
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 
-  --color-primary: #060e3c;
+  --color-primary: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -91,7 +91,7 @@ export const respond = {
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
 
-    --color-primary: #060e3c;
+    --color-primary: black;
   }
 }
 
