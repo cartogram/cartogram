@@ -13,7 +13,7 @@
   transform: translateX(01em);
 }
 
-.ListItem a:before {
+.ListItem a::before {
   content: '';
   position: absolute;
   left: 0;

@@ -1,5 +1,3 @@
-// import styled, {css} from 'styled-components';
-// import React from 'react';
 import Link, {LinkProps} from 'next/link';
 import styles from './A.module.css';
 
