@@ -13,12 +13,12 @@ const GlobalStyle = createGlobalStyle`
     --ft-body: 22;
     --ft-size-body: clamp(var(--ft-body-min), var(--ft-body-vw), var(--ft-body-max));
 
-    --ft-size-small: 13px;
+    --ft-size-sm: 13px;
 
     --ft-size-medium: var(--ft-size-body);
 
-    --ft-large: 30;
-    --ft-size-large: clamp(var(--ft-body-min) * (var(--ft-large) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-large) / var(--ft-body)), var(--ft-body-max) * (var(--ft-large) / var(--ft-body)));
+    --ft-lg: 30;
+    --ft-size-lg: clamp(var(--ft-body-min) * (var(--ft-lg) / var(--ft-body)), var(--ft-body-vw) * (var(--ft-lg) / var(--ft-body)), var(--ft-body-max) * (var(--ft-lg) / var(--ft-body)));
   }
 
   html,

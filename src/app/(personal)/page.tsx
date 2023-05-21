@@ -1,6 +1,12 @@
 import React from 'react';
 
-import {threeLiner, professionalLinks, bio, name} from '~/content';
+import {
+  threeLiner,
+  professionalLinks,
+  title,
+  name,
+  description,
+} from '~/content';
 
 import {Wordmark} from '~/components/Wordmark';
 import {Layout} from '~/components/Layout';

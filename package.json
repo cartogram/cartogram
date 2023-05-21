@@ -8,14 +8,22 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.0",
+    "@sanity/icons": "^2.1.0",
+    "@sanity/ui": "^1.2.0",
+    "@sanity/vision": "^3.11.1",
     "clsx": "^1.2.1",
     "next": "^13.4.2",
+    "next-sanity": "4.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-spring": "^9.5.2",
+    "sanity": "^3.11.1",
+    "server-only": "^0.0.1",
     "use-debounce": "^9.0.4"
   },
   "devDependencies": {
+    "@sanity/eslint-config-studio": "^2.0.1",
     "@types/node": "^20.1.1",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",

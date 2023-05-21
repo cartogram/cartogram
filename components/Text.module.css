@@ -9,14 +9,14 @@
   width: 100%;
   white-space: nowrap;
   display: flex;
-  font-size: var(--ft-size-small);
+  font-size: var(--ft-size-sm);
   flex-wrap: wrap;
 }
 
 .large {
   width: 100%;
   text-indent: 0;
-  font-size: var(--ft-size-large);
+  font-size: var(--ft-size-lg);
 }
 
 .pad {
