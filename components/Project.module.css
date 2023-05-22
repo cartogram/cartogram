@@ -15,11 +15,12 @@
   margin-right: 4px;
 }
 
-.closed {
-  height: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+.hasActive {
+  height: 44px;
+}
+
+.hasActive.active {
+  height: 100vh;
 }
 
 @media (min-width: 701px) {

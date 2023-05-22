@@ -30,6 +30,11 @@ export interface Project {
     end?: string;
   };
 }
+
+export interface ActiveProject extends Project {
+  active?: boolean;
+}
+
 export interface ShowcaseProject {
   _type: string;
   coverImage?: Image;

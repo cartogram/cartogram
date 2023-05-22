@@ -1,5 +1,5 @@
 import {getProjectBySlug} from 'lib/sanity.client';
-import {notFound} from 'next/navigation';
+import {PortableText} from '~/components/PortableText';
 
 export default async function PageSlugRoute({
   params,
@@ -10,8 +10,9 @@ export default async function PageSlugRoute({
   const data = await getProjectBySlug({slug});
 
   if (!data) {
-    notFound();
+    console.log('not found', slug);
+    return null;
   }
 
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+  return <PortableText value={data.overview} />;
 }
