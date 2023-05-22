@@ -1,0 +1,39 @@
+.Project {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  border: 1px solid;
+  border-radius: 4px;
+  border-bottom: 0;
+  background: white;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  padding-left: calc(var(--space-md) - 4px);
+  padding-right: calc(var(--space-md) - 4px);
+  margin-bottom: -4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.closed {
+  height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 701px) {
+  .Project {
+    margin-left: var(--space-md);
+    margin-right: var(--space-md);
+  }
+}
+
+@media (min-width: 1001px) {
+  .Project {
+    margin-left: var(--space-lg);
+    margin-right: var(--space-lg);
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+}

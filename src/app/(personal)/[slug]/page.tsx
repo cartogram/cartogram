@@ -1,4 +1,4 @@
-import {getPageBySlug} from 'lib/sanity.client';
+import {getProjectBySlug} from 'lib/sanity.client';
 import {notFound} from 'next/navigation';
 
 export default async function PageSlugRoute({
@@ -7,7 +7,7 @@ export default async function PageSlugRoute({
   params: {slug: string};
 }) {
   const {slug} = params;
-  const data = await getPageBySlug({slug});
+  const data = await getProjectBySlug({slug});
 
   if (!data) {
     notFound();

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {threeLiner, professionalLinks, name} from '~/content';
+import {getHomePage} from 'lib/sanity.client';
 
 import {Wordmark} from '~/components/Wordmark';
 import {Layout} from '~/components/Layout';
@@ -10,8 +11,12 @@ import {Footer} from '~/components/Footer';
 import {List} from '~/components/List';
 import {Content} from '~/components/Content';
 import {A} from '~/components/A';
+import {Project} from '~/components/Project';
 
-export default function Home() {
+export default async function Home(params) {
+  const data = await getHomePage({token: null});
+
+  console.log(params);
   return (
     <>
       <Layout>
@@ -26,6 +31,11 @@ export default function Home() {
           <List pad inline items={professionalLinks} />
         </Section>
         <Footer />
+        {data &&
+          data.showcaseProjects &&
+          data.showcaseProjects.map(project => (
+            <Project key={project._id} project={project} />
+          ))}
       </Layout>
     </>
   );

@@ -18,8 +18,8 @@
     "paths": {
       "~/components/*": ["components/*"],
       "~/hooks": ["hooks"],
-      "~/styles": ["styles"],
       "~/utils": ["utils"],
+      "~/lib": ["lib"],
       "~/content": ["content"]
     },
     "plugins": [
