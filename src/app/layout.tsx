@@ -36,7 +36,9 @@ export default async function RootLayout({activeProject, children, ...rest}) {
           </Header>
           {children}
 
-          <Section pad small></Section>
+          <Section pad small>
+            <List pad inline items={professionalLinks} />
+          </Section>
           <Footer />
 
           <Projects projects={data?.showcaseProjects ?? []}>

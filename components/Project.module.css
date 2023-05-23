@@ -10,12 +10,7 @@
   margin-left: 4px;
   margin-right: 4px;
   flex-direction: column;
-  width: 40%;
 }
-/*
-.Project:last-of-type {
-  border-radius: 4px 4px 0 0;
-} */
 
 .Link {
   display: block;
@@ -24,13 +19,14 @@
   padding-left: calc(var(--space-md) - 4px);
   padding-right: calc(var(--space-md) - 4px);
   line-height: 3;
-}
-
-.hasActive {
   height: 6px;
 }
 
-.hasActive.active {
+.open {
+  height: auto;
+}
+
+.active {
   height: auto;
 }
 

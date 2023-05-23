@@ -1,5 +1,6 @@
 'use client';
 
+import {useState} from 'react';
 import {ActiveProject} from 'types';
 import {Project} from './Project';
 import styles from './Projects.module.css';
@@ -25,15 +26,17 @@ export function Projects({children, ...props}: ProjectsProps) {
   }, []);
 
   const hasActiveProject = projects?.some(project => project.active);
+  const forceOpen = Boolean(!params?.slug);
+  const [open, setOpen] = useState(forceOpen);
 
   return (
-    <div className={styles.Projects}>
-      {projects?.map(project => (
-        <Project
-          hasActive={hasActiveProject}
-          key={project._id}
-          project={project}
-        />
+    <div
+      className={styles.Projects}
+      onMouseOut={() => setOpen(!hasActiveProject)}
+      onMouseOver={() => setOpen(true)}
+    >
+      {projects?.map((project, index) => (
+        <Project open={forceOpen || open} key={index} project={project} />
       ))}
     </div>
   );

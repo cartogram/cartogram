@@ -10,21 +10,23 @@ import styles from './Project.module.css';
 
 interface ProjectProps {
   project: ActiveProject;
-  hasActive?: boolean;
+  open?: boolean;
 }
 
-export function Project({project, hasActive}: ProjectProps) {
+export function Project({project, open, ...props}: ProjectProps) {
   const className = clsx(
     styles.Link,
-    hasActive && styles.hasActive,
+    open && styles.open,
     project.active && styles.active,
   );
+
+  console.log(open, project.active);
 
   const href =
     project.active || project.slug === undefined ? '/' : project.slug;
   return (
-    <article className={styles.Project}>
-      <Link href={href} className={className}>
+    <article className={styles.Project} {...props}>
+      <Link href={project.slug} className={className}>
         <Text>
           <A>{project.title}</A>
         </Text>

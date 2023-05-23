@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useTrail, animated} from 'react-spring';
+import {useTrail, animated} from '@react-spring/web';
 import {randomNumber} from '~/utils';
 import {useInterval} from '~/hooks';
 
