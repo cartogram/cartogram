@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+.Content:first-of-type {
+  padding-top: var(--space-xl);
+}
+
 .Content p {
   width: 100%;
   font-weight: normal;

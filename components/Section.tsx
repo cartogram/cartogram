@@ -7,6 +7,7 @@ interface SectionProps {
   vertical?: boolean;
   small?: boolean;
   pad?: boolean;
+  fill?: boolean;
 }
 
 export const Section = ({children, ...classes}: SectionProps) => {
@@ -14,6 +15,7 @@ export const Section = ({children, ...classes}: SectionProps) => {
     styles.Section,
     classes.small && styles.small,
     classes.pad && styles.pad,
+    classes.fill && styles.fill,
   );
 
   return <section className={className}>{children}</section>;

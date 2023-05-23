@@ -7,9 +7,5 @@ interface HeaderProps {
 }
 
 export function Header({children}: HeaderProps) {
-  return (
-    <div className={styles.Header}>
-      <Text>{children}</Text>
-    </div>
-  );
+  return <div className={styles.Header}>{children}</div>;
 }

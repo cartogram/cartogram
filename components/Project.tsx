@@ -1,30 +1,34 @@
-import {Large} from './Text';
-import {Project} from 'types';
-import {A} from './A';
-import styles from './Project.module.css';
+import Link from 'next/link';
 import {clsx} from 'clsx';
 
+import {ActiveProject} from 'types';
+
+import {Text} from './Text';
+import {A} from './A';
+
+import styles from './Project.module.css';
+
 interface ProjectProps {
-  project: Project;
+  project: ActiveProject;
   hasActive?: boolean;
-  children?: React.ReactNode;
 }
 
-export function Project({project, hasActive, children}: ProjectProps) {
+export function Project({project, hasActive}: ProjectProps) {
   const className = clsx(
-    styles.Project,
+    styles.Link,
     hasActive && styles.hasActive,
     project.active && styles.active,
   );
 
-  const href = project.active ? '/' : project.slug;
+  const href =
+    project.active || project.slug === undefined ? '/' : project.slug;
   return (
-    <div className={className}>
-      <Large>
-        <A href={href}>{project.title}</A>
-        {project.active && ' (current)'}
-      </Large>
-      {project.active && children}
-    </div>
+    <article className={styles.Project}>
+      <Link href={href} className={className}>
+        <Text>
+          <A>{project.title}</A>
+        </Text>
+      </Link>
+    </article>
   );
 }

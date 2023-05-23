@@ -1,12 +1,17 @@
 import React from 'react';
 
-import {getHomePage} from 'lib/sanity.client';
-import {Projects} from '~/components/Projects';
+import {threeLiner} from '~/content';
+import {Wordmark} from '~/components/Wordmark';
+import {Content} from '~/components/Content';
+import {Section} from '~/components/Section';
 
-export default async function Home({children, ...rest}) {
-  const data = await getHomePage({token: null});
-
+export default async function Home() {
   return (
-    <Projects projects={data?.showcaseProjects ?? []}>{children}</Projects>
+    <>
+      <Wordmark />
+      <Section pad fill>
+        <Content content={threeLiner} />
+      </Section>
+    </>
   );
 }

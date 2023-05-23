@@ -6,7 +6,7 @@
   margin: var(--space-md);
 }
 
-.Section:first-of-type {
+.fill {
   flex: 1;
 }
 
@@ -14,17 +14,11 @@
   .pad {
     margin: var(--space-md);
   }
-  .pad:first-of-type {
-    margin-top: var(--space-lg);
-  }
 }
 
 @media (min-width: 1001px) {
   .pad {
     margin: var(--space-lg);
-  }
-  .pad:first-of-type {
-    margin-top: var(--space-lg);
   }
 }
 

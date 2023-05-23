@@ -1,6 +1,7 @@
 import {getProjectBySlug} from 'lib/sanity.client';
 import {PortableText} from '~/components/PortableText';
-
+import {Content} from '~/components/Content';
+import {Section} from '~/components/Section';
 export default async function PageSlugRoute({
   params,
 }: {
@@ -14,5 +15,11 @@ export default async function PageSlugRoute({
     return null;
   }
 
-  return <PortableText value={data.overview} />;
+  return (
+    <Section fill pad>
+      <Content>
+        <PortableText value={data.overview} />
+      </Content>
+    </Section>
+  );
 }
