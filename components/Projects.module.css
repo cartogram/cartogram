@@ -1,4 +1,44 @@
 .Projects {
+  z-index: 1;
   margin-bottom: -4px;
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  bottom: 0;
+  width: 100%;
   overflow: hidden;
+}
+
+@media (min-width: 701px) {
+  .Projects {
+    position: absolute;
+    width: 50%;
+  }
+}
+
+.Label {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  padding-right: var(--space-md);
+  padding-left: var(--space-sm);
+  margin-left: var(--space-sm);
+  margin-right: var(--space-sm);
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+}
+
+@media (min-width: 701px) {
+  .Label {
+    padding-left: var(--space-md);
+  }
+}
+
+@media (min-width: 1001px) {
+  .Label {
+    margin-right: var(--space-xl);
+    margin-left: var(--space-xl);
+    padding-left: var(--space-md);
+  }
 }

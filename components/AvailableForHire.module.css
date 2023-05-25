@@ -1,0 +1,84 @@
+.AvailableForHire {
+  position: absolute;
+  height: 10.4vw;
+  width: 13vw;
+  text-align: center;
+  min-height: 104px;
+  min-width: 130px;
+  right: -3rem;
+  display: flex;
+  top: -4rem;
+  display: block;
+}
+
+.AvailableForHire * {
+  text-decoration: underline;
+}
+
+.AvailableForHire:hover * {
+  text-decoration: none;
+}
+
+@media (min-width: 501px) {
+  .AvailableForHire {
+    right: 0rem;
+  }
+}
+
+@media (min-width: 1001px) {
+  .AvailableForHire {
+    right: auto;
+  }
+}
+
+.Foreground {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(20deg);
+  transform-origin: center center;
+}
+
+.Background {
+  position: absolute;
+  height: 10.4vw;
+  width: 13vw;
+  min-height: 104px;
+  min-width: 130px;
+  overflow: hidden;
+  transform: skew(45deg) translate(0%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.Background:after {
+  position: absolute;
+  content: '';
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 80%;
+  background: white;
+  border: 1px solid;
+  border-radius: 50%;
+  transform: skew(-45deg);
+}
+
+.Background:before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: -80%;
+  height: 100%;
+  width: 80%;
+  background: var(--color-primary);
+  border-radius: 50%;
+  transform: skew(-45deg);
+  z-index: 2;
+  mask: var(--stripes);
+}

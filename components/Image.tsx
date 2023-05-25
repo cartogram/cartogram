@@ -1,6 +1,8 @@
 import {urlForImage} from 'lib/sanity.image';
 import NextImage from 'next/image';
 
+import styles from './Image.module.css';
+
 interface ImageProps {
   image?: {asset?: any};
   alt?: string;
@@ -16,13 +18,12 @@ export function Image({
   width = 3500,
   height = 2000,
   size = '100vw',
-  classesWrapper,
 }: ImageProps) {
   const imageUrl =
     image && urlForImage(image)?.height(height).width(width).fit('crop').url();
 
   return (
-    <div className="">
+    <div className={styles.Image}>
       {imageUrl && (
         <NextImage
           className=""

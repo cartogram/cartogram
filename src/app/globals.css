@@ -11,7 +11,7 @@
   --ft-screen-width: 1440;
   --ft-body-min: 1rem;
   --ft-body-max: 5rem;
-  --ft-body: 22;
+  --ft-body: 16;
   --ft-body-vw: calc(var(--ft-body) / var(--ft-screen-width) * 100vw);
 
   --ft-size-body: clamp(
@@ -21,7 +21,7 @@
   );
 
   --ft-size-sm: 0.8rem;
-  --ft-lg: 30;
+  --ft-lg: 21;
   --ft-size-lg: clamp(
     var(--ft-body-min) * (var(--ft-lg) / var(--ft-body)),
     var(--ft-body-vw) * (var(--ft-lg) / var(--ft-body)),
@@ -35,6 +35,24 @@
   --space-xl: 3rem;
 
   --color-primary: #000;
+
+  /* https://css-generators.com/custom-borders/ */
+  --stripes: radial-gradient(
+        9.44px at calc(100% + 8px) 50%,
+        #0000 calc(99% - 1px),
+        #000 calc(101% - 1px) 99%,
+        #0000 101%
+      )
+      calc(50% - 2.5px + 0.5px) calc(50% - 8px) / 5px 16px,
+    radial-gradient(
+        9.44px at -8px 50%,
+        #0000 calc(99% - 1px),
+        #000 calc(101% - 1px) 99%,
+        #0000 101%
+      )
+      calc(50% + 2.5px) 50%/5px 16px;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
 }
 
 html,
@@ -91,6 +109,7 @@ body {
 
 a {
   color: var(--color-primary);
+  text-decoration: underline;
 }
 
 a:hover {

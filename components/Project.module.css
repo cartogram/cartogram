@@ -13,21 +13,31 @@
 }
 
 .Link {
-  display: block;
+  text-decoration: none;
+  align-items: center;
+  display: flex;
   width: 100%;
   padding-top: var(--space-xs);
   padding-left: calc(var(--space-md) - 4px);
   padding-right: calc(var(--space-md) - 4px);
   line-height: 3;
   height: 6px;
+  gap: 8px;
+  opacity: 0;
+}
+
+.Link:hover {
+  text-decoration: none;
 }
 
 .open {
+  opacity: 1;
   height: auto;
 }
 
 .active {
   height: auto;
+  opacity: 1;
 }
 
 @media (min-width: 701px) {

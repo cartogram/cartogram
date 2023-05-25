@@ -31,7 +31,7 @@ export function A({external, as, href, children, ...rest}: Props) {
   }
 
   return (
-    <Link as={as} className={styles.A} href={href}>
+    <Link as={as} className={styles.A} href={href} {...rest}>
       {children}
     </Link>
   );

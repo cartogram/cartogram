@@ -11,7 +11,7 @@ import settings from 'schemas/singletons/settings';
 
 export default defineConfig({
   name: 'default',
-  title: 'seashell-frog',
+  title: 'Cartogram',
   basePath: '/studio',
 
   projectId: 'rgblfkxx',

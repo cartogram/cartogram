@@ -1,4 +1,15 @@
 .Header {
-  position: fixed;
   z-index: 1;
+  margin-bottom: calc(var(--space-md) * -1);
+  transition: top 0.5s ease-in-out;
+}
+
+.busy {
+  transform: translate3d(0, var(--space-lg), 0);
+}
+
+@media (min-width: 1001px) {
+  .Header {
+    margin-bottom: calc(var(--space-xl) * -1);
+  }
 }

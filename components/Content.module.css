@@ -4,16 +4,13 @@
   width: 100%;
 }
 
-.Content:first-of-type {
-  padding-top: var(--space-xl);
-}
-
 .Content p {
   width: 100%;
   font-weight: normal;
   display: block;
   font-size: var(--ft-size-body);
   padding-bottom: var(--space-md);
+  max-width: 700px;
 }
 
 .Content p:first-child {

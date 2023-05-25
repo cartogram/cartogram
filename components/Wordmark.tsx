@@ -9,13 +9,6 @@ import styles from './Wordmark.module.css';
 export function Wordmark({active = true}) {
   const size = useWindowSize();
 
-  useEffect(() => {
-    document.body.style.setProperty(
-      '--color-primary',
-      ['red', 'blue', 'deeppink'][Math.floor(Math.random() * 3)],
-    );
-  }, []);
-
   const letters = Array.from('CARTOGRAM').map((l, index) => (
     <Letter
       height={size.height}

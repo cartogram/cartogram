@@ -10,14 +10,8 @@
   flex: 1;
 }
 
-@media (min-width: 701px) {
-  .pad {
-    margin: var(--space-md);
-  }
-}
-
 @media (min-width: 1001px) {
-  .pad {
+  .Section {
     margin: var(--space-lg);
   }
 }

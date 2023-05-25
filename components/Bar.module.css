@@ -1,0 +1,32 @@
+.Bar {
+  height: var(--space-lg);
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Squibbles {
+  height: 100vw;
+  position: absolute;
+  transform: translate(0, -50%) rotate(45deg);
+  width: 100vw;
+  top: 0;
+  background: var(--color-primary);
+  mask: var(--stripes);
+  animation-duration: 3s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes move {
+  from {
+    top: 0%;
+  }
+
+  to {
+    top: -100%;
+  }
+}

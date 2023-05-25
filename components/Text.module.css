@@ -6,7 +6,7 @@
 }
 
 .small {
-  width: 100%;
+  width: auto;
   white-space: nowrap;
   display: flex;
   font-size: var(--ft-size-sm);
@@ -21,4 +21,8 @@
 
 .pad {
   padding-bottom: var(--space-md);
+}
+
+.clamp {
+  font-size: 1.5rem;
 }

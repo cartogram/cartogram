@@ -2,14 +2,19 @@ import clsx from 'clsx';
 import styles from './Text.module.css';
 
 interface TextProps {
+  clamp?: boolean;
   pad?: boolean;
   children?: React.ReactNode;
 }
 
 export const Text = ({children, ...classes}: TextProps) => {
-  const className = clsx(styles.Text, classes.pad && styles.pad);
+  const className = clsx(
+    styles.Text,
+    classes.clamp && styles.clamp,
+    classes.pad && styles.pad,
+  );
 
-  return <p className={className}>{children}</p>;
+  return <span className={className}>{children}</span>;
 };
 
 export const Small = (props: TextProps) => {
