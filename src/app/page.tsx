@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {threeLiner} from '~/content';
 import {Wordmark} from '~/components/Wordmark';
 import {Content} from '~/components/Content';
 import {Section} from '~/components/Section';
@@ -11,8 +10,6 @@ import {getHomePage} from '~/lib/sanity.client';
 
 export default async function Home() {
   const data = await getHomePage({token: null});
-
-  console.log(data);
 
   const {title, overview} = data || {};
 
