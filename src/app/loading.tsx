@@ -9,7 +9,7 @@ import {Bar} from '~/components/Bar';
 export default async function Loading() {
   return (
     <>
-      <Header title="Loading" busy />
+      <Header title="Loading..." busy />
       <Bar />
       <Section fill />
     </>
