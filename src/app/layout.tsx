@@ -13,7 +13,7 @@ export const metadata = {
   description,
 };
 
-export default async function RootLayout({activeProject, children, ...rest}) {
+export default async function RootLayout({children}) {
   const data = await getHomePage({token: null});
 
   return (

@@ -19,7 +19,7 @@
       "~/components/*": ["components/*"],
       "~/hooks": ["hooks"],
       "~/utils": ["utils"],
-      "~/lib": ["lib"],
+      "~/lib/*": ["lib/*"],
       "~/types": ["types"],
       "~/content": ["content"]
     },

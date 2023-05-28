@@ -4,18 +4,28 @@ import {threeLiner} from '~/content';
 import {Wordmark} from '~/components/Wordmark';
 import {Content} from '~/components/Content';
 import {Section} from '~/components/Section';
+import {PortableText} from '~/components/PortableText';
 import {Header} from '~/components/Header';
 import {AvailableForHire} from '~/components/AvailableForHire';
+import {getHomePage} from '~/lib/sanity.client';
 
 export default async function Home() {
+  const data = await getHomePage({token: null});
+
+  console.log(data);
+
+  const {title, overview} = data || {};
+
   return (
     <>
-      <Header />
+      <Header title={title} />
 
       <Wordmark />
 
-      <Section fill>
-        <Content content={threeLiner} />
+      <Section fill small>
+        <Content>
+          <PortableText value={overview} />
+        </Content>
         <AvailableForHire />
       </Section>
     </>

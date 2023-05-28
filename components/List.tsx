@@ -16,6 +16,3 @@ export function List({items, pad, inline}: ListProps) {
 
   return <ul className={styles.List}>{itemsMarkup}</ul>;
 }
-
-import {Text} from './Text';
-import {A} from './A';

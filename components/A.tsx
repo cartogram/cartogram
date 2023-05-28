@@ -11,6 +11,7 @@ type Props = Omit<LinkProps, 'href'> & {
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => void;
   onMouseOut?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  className?: string;
 };
 
 export function A({external, as, href, children, ...rest}: Props) {

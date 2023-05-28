@@ -24,7 +24,7 @@ export const Small = (props: TextProps) => {
 };
 
 export const Large = (props: TextProps) => {
-  const className = clsx(styles.Text, styles.large);
+  const className = clsx(styles.Text, styles.large, props.pad && styles.pad);
 
   return <span className={className}>{props.children}</span>;
 };

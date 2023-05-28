@@ -5,9 +5,11 @@
   text-align: center;
   min-height: 104px;
   min-width: 130px;
-  right: -3rem;
+  max-height: 208px;
+  max-width: 260px;
+  right: -2rem;
   display: flex;
-  top: -4rem;
+  top: 0rem;
   display: block;
 }
 
@@ -17,18 +19,6 @@
 
 .AvailableForHire:hover * {
   text-decoration: none;
-}
-
-@media (min-width: 501px) {
-  .AvailableForHire {
-    right: 0rem;
-  }
-}
-
-@media (min-width: 1001px) {
-  .AvailableForHire {
-    right: auto;
-  }
 }
 
 .Foreground {
@@ -50,6 +40,8 @@
   width: 13vw;
   min-height: 104px;
   min-width: 130px;
+  max-height: 208px;
+  max-width: 260px;
   overflow: hidden;
   transform: skew(45deg) translate(0%, -50%);
   top: 50%;

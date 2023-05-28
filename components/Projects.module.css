@@ -21,12 +21,14 @@
   padding-top: var(--space-sm);
   padding-bottom: var(--space-sm);
   padding-right: var(--space-md);
-  padding-left: var(--space-sm);
-  margin-left: var(--space-sm);
   margin-right: var(--space-sm);
   position: relative;
   display: flex;
-  align-self: flex-end;
+  gap: 16px;
+}
+
+.Label *:first-child {
+  width: var(--space-xl);
 }
 
 @media (min-width: 701px) {

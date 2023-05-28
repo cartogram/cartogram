@@ -4,20 +4,23 @@ import {
 } from '@portabletext/react';
 import type {PortableTextBlock} from '@portabletext/types';
 import {Image} from './Image';
-import {Small} from './Text';
+import {Small, Text} from './Text';
 import {Image as SanityImage} from 'sanity';
 
 export function PortableText({
-  paragraphClasses,
   value,
 }: {
   paragraphClasses?: string;
-  value: PortableTextBlock[];
+  value?: PortableTextBlock[];
 }) {
+  if (!value) {
+    return null;
+  }
+
   const components: PortableTextComponents = {
     block: {
       normal: ({children}) => {
-        return <p className={paragraphClasses}>{children}</p>;
+        return <Text>{children}</Text>;
       },
     },
     marks: {
@@ -40,10 +43,10 @@ export function PortableText({
         value: SanityImage & {alt?: string; caption?: string};
       }) => {
         return (
-          <div>
+          <>
             <Image image={value} alt={value.alt} />
             {value?.caption && <Small>{value.caption}</Small>}
-          </div>
+          </>
         );
       },
     },

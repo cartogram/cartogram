@@ -3,10 +3,13 @@
 }
 
 .Image img {
-  mix-blend-mode: screen;
-  filter: grayscale(100%) contrast(200%);
   opacity: 1;
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.monochrome img {
+  mix-blend-mode: screen;
+  filter: grayscale(100%) contrast(200%);
 }

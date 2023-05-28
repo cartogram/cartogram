@@ -3,6 +3,7 @@ import {visionTool} from '@sanity/vision';
 import {deskTool} from 'sanity/desk';
 import page from 'schemas/documents/page';
 import project from 'schemas/documents/project';
+import writing from 'schemas/documents/writing';
 import duration from 'schemas/objects/duration';
 import milestone from 'schemas/objects/milestone';
 import timeline from 'schemas/objects/timeline';
@@ -29,6 +30,7 @@ export default defineConfig({
       duration,
       page,
       project,
+      writing,
       // Objects
       milestone,
       timeline,

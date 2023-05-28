@@ -3,6 +3,7 @@
 import {useState, useEffect} from 'react';
 import {ActiveProject} from 'types';
 import {Project} from './Project';
+import {Dash} from './Dash';
 import {Small} from './Text';
 import styles from './Projects.module.css';
 import {useParams} from 'next/navigation';
@@ -44,9 +45,11 @@ export function Projects(props: ProjectsProps) {
         onMouseOver={() => setOpen(true)}
       >
         <div className={styles.Label}>
-          <Small>Selected</Small>
-          <span className="dash">―</span>
-          <Small>Projects ❒</Small>
+          <Small>
+            <Dash />
+          </Small>
+          <Small>Page 𝚫</Small>
+          <Small>Project ✰</Small>
           <Small>Writing ❍</Small>
         </div>
         {projects?.map((project, index) => (

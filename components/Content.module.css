@@ -4,7 +4,8 @@
   width: 100%;
 }
 
-.Content p {
+.Content p,
+.Content span {
   width: 100%;
   font-weight: normal;
   display: block;
@@ -13,7 +14,12 @@
   max-width: 700px;
 }
 
-.Content p:first-child {
+.Content span strong {
+  text-decoration: line-through;
+}
+
+.Content p:first-child,
+.Content span:first-child {
   font-size: var(--ft-size-lg);
 }
 

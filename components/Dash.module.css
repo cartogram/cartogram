@@ -1,0 +1,23 @@
+.dash {
+  position: relative;
+  display: inline-block;
+  text-indent: -9999px;
+  min-width: 1em;
+  max-width: 5em;
+}
+
+.fill {
+  max-width: 100%;
+  flex: 1;
+}
+
+.dash::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  background: var(--color-primary);
+}

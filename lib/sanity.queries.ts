@@ -6,12 +6,14 @@ export const homePageQuery = groq`
     footer,
     overview,
     showcaseProjects[]->{
+      _createdAt,
       _type,
       coverImage,
       overview,
       "slug": slug.current,
       tags,
       title,
+      pending,
     },
     title,
   }
@@ -24,16 +26,20 @@ export const homePageTitleQuery = groq`
 export const pagesBySlugQuery = groq`
   *[_type == "page" && slug.current == $slug][0] {
     _id,
+    _createdAt,
     body,
     overview,
     slug,
     title,
+    coverImage,
+    intro,
   }
 `;
 
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
+    _createdAt,
     client,
     coverImage,
     description,
@@ -43,6 +49,7 @@ export const projectBySlugQuery = groq`
     "slug": slug.current,
     tags,
     title,
+    pending,
   }
 `;
 

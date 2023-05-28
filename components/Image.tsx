@@ -3,13 +3,15 @@ import NextImage from 'next/image';
 
 import styles from './Image.module.css';
 
+import {clsx} from 'clsx';
+
 interface ImageProps {
   image?: {asset?: any};
   alt?: string;
   width?: number;
   height?: number;
   size?: string;
-  classesWrapper?: string;
+  monochrome?: boolean;
 }
 
 export function Image({
@@ -18,15 +20,16 @@ export function Image({
   width = 3500,
   height = 2000,
   size = '100vw',
+  monochrome,
 }: ImageProps) {
+  const className = clsx(styles.Image, monochrome && styles.monochrome);
   const imageUrl =
     image && urlForImage(image)?.height(height).width(width).fit('crop').url();
 
   return (
-    <div className={styles.Image}>
+    <div className={className}>
       {imageUrl && (
         <NextImage
-          className=""
           alt={alt}
           width={width}
           height={height}

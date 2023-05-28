@@ -1,6 +1,5 @@
 .Footer {
   background-color: white;
-  display: block;
   top: 4px;
   position: relative;
 }
@@ -9,4 +8,10 @@
   .Footer {
     background: none;
   }
+}
+
+.copyright {
+  display: flex;
+  width: 100%;
+  align-items: center;
 }
