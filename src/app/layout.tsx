@@ -3,6 +3,7 @@ import React from 'react';
 import {title, description} from '~/content';
 
 import {Layout} from '~/components/Layout';
+import {Analytics} from '@vercel/analytics/react';
 
 import {getHomePage} from 'lib/sanity.client';
 
@@ -20,6 +21,7 @@ export default async function RootLayout({children}) {
     <html lang="en">
       <body>
         <Layout projects={data?.showcaseProjects ?? []}>{children}</Layout>
+        <Analytics />
       </body>
     </html>
   );
