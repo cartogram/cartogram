@@ -34,3 +34,7 @@ yarn-error.log*
 # vercel
 .vercel
 /examples/
+
+# yalc
+.yalc
+yalc.lock

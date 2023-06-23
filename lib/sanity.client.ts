@@ -14,21 +14,19 @@ import type {
   SettingsPayload,
 } from 'types';
 
-/**
- * Checks if it's safe to create a client instance, as `@sanity/client` will throw an error if `projectId` is false
- */
-const sanityClient = (token?: string | null) => {
-  return projectId
-    ? createClient({projectId, dataset, apiVersion, useCdn, token: token!})
-    : null;
-};
+const client = createClient({
+  projectId,
+  dataset,
+  apiVersion, // https://www.sanity.io/docs/api-versioning
+  useCdn: true, // if you're using ISR or only static generation at build time then you can set this to `false` to guarantee no stale content
+});
 
 export async function getHomePage({
   token,
 }: {
   token?: string | null;
 }): Promise<HomePagePayload | undefined> {
-  return await sanityClient(token)?.fetch(homePageQuery);
+  return await client.fetch(homePageQuery);
 }
 
 export async function getHomePageTitle({
@@ -36,7 +34,7 @@ export async function getHomePageTitle({
 }: {
   token?: string | null;
 }): Promise<string | undefined> {
-  return await sanityClient(token)?.fetch(homePageTitleQuery);
+  return await client.fetch(homePageTitleQuery);
 }
 
 export async function getPageBySlug({
@@ -46,7 +44,7 @@ export async function getPageBySlug({
   slug: string;
   token?: string | null;
 }): Promise<PagePayload | undefined> {
-  return await sanityClient(token)?.fetch(pagesBySlugQuery, {slug});
+  return await client.fetch(pagesBySlugQuery, {slug});
 }
 
 export async function getProjectBySlug({
@@ -56,7 +54,7 @@ export async function getProjectBySlug({
   slug: string;
   token?: string | null;
 }): Promise<ProjectPayload | undefined> {
-  return await sanityClient(token)?.fetch(projectBySlugQuery, {slug});
+  return await client.fetch(projectBySlugQuery, {slug});
 }
 
 export async function getSettings({
@@ -64,5 +62,5 @@ export async function getSettings({
 }: {
   token?: string | null;
 }): Promise<SettingsPayload | undefined> {
-  return await sanityClient(token)?.fetch(settingsQuery);
+  return await client.fetch(settingsQuery);
 }
