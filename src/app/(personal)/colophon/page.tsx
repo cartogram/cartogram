@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import {stackLinks} from '~/content';
-import {Layout} from '~/components/Layout';
-import {Section} from '~/components/Section';
-import {Text, Large} from '~/components/Text';
-import {List} from '~/components/List';
-import {A} from '~/components/A';
+import {stackLinks} from '~/content'
+import {Section} from '~/components/Section'
+import {Text, Large} from '~/components/Text'
+import {List} from '~/components/List'
+import {A} from '~/components/A'
 
 export default function Home() {
   return (
@@ -48,5 +47,5 @@ export default function Home() {
         on GitHub.
       </Text>
     </Section>
-  );
+  )
 }

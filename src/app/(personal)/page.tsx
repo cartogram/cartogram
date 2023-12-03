@@ -1,17 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import {Wordmark} from '~/components/Wordmark';
-import {Content} from '~/components/Content';
-import {Section} from '~/components/Section';
-import {PortableText} from '~/components/PortableText';
-import {Header} from '~/components/Header';
-import {AvailableForHire} from '~/components/AvailableForHire';
-import {getHomePage} from '~/lib/sanity.client';
+import {Wordmark} from '~/components/Wordmark'
+import {Content} from '~/components/Content'
+import {Section} from '~/components/Section'
+import {Header} from '~/components/Header'
 
 export default async function Home() {
-  const data = await getHomePage({token: null});
-
-  const {title, overview} = data || {};
+  const title = 'Cartogram'
+  const overview = 'Cartogram is a small design studio in Berlin, Germany.'
 
   return (
     <>
@@ -21,10 +17,9 @@ export default async function Home() {
 
       <Section fill small>
         <Content>
-          <PortableText value={overview} />
+          <p>{overview}</p>
         </Content>
-        <AvailableForHire />
       </Section>
     </>
-  );
+  )
 }

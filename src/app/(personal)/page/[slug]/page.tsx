@@ -1,25 +1,32 @@
-import {getPageBySlug} from 'lib/sanity.client';
-import {PortableText} from '~/components/PortableText';
-import {Content} from '~/components/Content';
-import {Section} from '~/components/Section';
-import {Header} from '~/components/Header';
-import {Small} from '~/components/Text';
-import {Mast} from '~/components/Mast';
+import {PortableText} from '~/components/PortableText'
+import {Content} from '~/components/Content'
+import {Section} from '~/components/Section'
+import {Header} from '~/components/Header'
+import {Small} from '~/components/Text'
+import {Mast} from '~/components/Mast'
+
+interface Params {
+  slug: string
+}
+
+function getPageBySlug(params: Params) {
+  return {}
+}
 
 export default async function PageSlugRoute({
   params,
 }: {
-  params: {slug: string};
+  params: {slug: string}
 }) {
-  const {slug} = params;
+  const {slug} = params
 
-  const data = await getPageBySlug({slug});
+  const data = await getPageBySlug({slug})
 
   if (!data) {
-    return null;
+    return null
   }
 
-  const {body, coverImage, intro, title} = data || {};
+  const {body, coverImage, intro, title} = data || {}
 
   return (
     <>
@@ -32,5 +39,5 @@ export default async function PageSlugRoute({
         </Content>
       </Section>
     </>
-  );
+  )
 }

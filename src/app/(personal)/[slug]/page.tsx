@@ -1,29 +1,33 @@
-import {getProjectBySlug} from 'lib/sanity.client';
-import {PortableText} from '~/components/PortableText';
-import {Content} from '~/components/Content';
-import {Section} from '~/components/Section';
-import {Header} from '~/components/Header';
-import {Image} from '~/components/Image';
-import {Text, Small, Large} from '~/components/Text';
-import {Mast} from '~/components/Mast';
+import {Content} from '~/components/Content'
+import {Header} from '~/components/Header'
+import {Mast} from '~/components/Mast'
+import {PortableText} from '~/components/PortableText'
+import {Section} from '~/components/Section'
+import {Small} from '~/components/Text'
 
-import Link from 'next/link';
+interface Params {
+  slug: string
+}
+
+function getProjectBySlug(params: Params) {
+  return {}
+}
 
 export default async function PageSlugRoute({
   params,
 }: {
-  params: {slug: string};
+  params: {slug: string}
 }) {
-  const {slug} = params;
+  const {slug} = params
 
-  const data = await getProjectBySlug({slug});
+  const data = await getProjectBySlug({slug})
 
   if (!data) {
-    return null;
+    return null
   }
 
   const {client, coverImage, description, duration, overview, site, title} =
-    data || {};
+    data
 
   return (
     <>
@@ -44,5 +48,5 @@ export default async function PageSlugRoute({
         </Content>
       </Section>
     </>
-  );
+  )
 }

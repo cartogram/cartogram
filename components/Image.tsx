@@ -1,42 +1,39 @@
-import {urlForImage} from 'lib/sanity.image';
-import NextImage from 'next/image';
+import NextImage from 'next/image'
 
-import styles from './Image.module.css';
+import styles from './Image.module.css'
 
-import {clsx} from 'clsx';
+import {clsx} from 'clsx'
 
 interface ImageProps {
-  image?: {asset?: any};
-  alt?: string;
-  width?: number;
-  height?: number;
-  size?: string;
-  monochrome?: boolean;
+  src: string
+  alt?: string
+  width?: number
+  height?: number
+  size?: string
+  monochrome?: boolean
 }
 
 export function Image({
-  image,
+  src,
   alt = 'Cover image',
   width = 3500,
   height = 2000,
   size = '100vw',
   monochrome,
 }: ImageProps) {
-  const className = clsx(styles.Image, monochrome && styles.monochrome);
-  const imageUrl =
-    image && urlForImage(image)?.height(height).width(width).fit('crop').url();
+  const className = clsx(styles.Image, monochrome && styles.monochrome)
 
   return (
     <div className={className}>
-      {imageUrl && (
+      {src && (
         <NextImage
           alt={alt}
           width={width}
           height={height}
           sizes={size}
-          src={imageUrl}
+          src={src}
         />
       )}
     </div>
-  );
+  )
 }
