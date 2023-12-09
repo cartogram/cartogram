@@ -1,4 +1,5 @@
 import React from 'react'
+import {allPosts, Post} from 'contentlayer/generated'
 
 import {title, description} from '~/content'
 
@@ -13,9 +14,10 @@ export const metadata = {
 }
 
 export default async function RootLayout({children}) {
+  const posts = allPosts
   return (
     <>
-      <Layout projects={[]}>{children}</Layout>
+      <Layout projects={posts}>{children}</Layout>
       <Analytics />
     </>
   )

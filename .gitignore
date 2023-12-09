@@ -38,3 +38,6 @@ yarn-error.log*
 # yalc
 .yalc
 yalc.lock
+
+# contentlayer
+.contentlayer

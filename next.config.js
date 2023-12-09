@@ -1,3 +1,5 @@
+const {withContentlayer} = require('next-contentlayer')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,9 +7,6 @@ const nextConfig = {
     locales: ['en'],
     defaultLocale: 'en',
   },
-  images: {
-    remotePatterns: [{hostname: 'cdn.sanity.io'}],
-  },
-};
+}
 
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig)

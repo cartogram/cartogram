@@ -1,22 +1,24 @@
-import React, {ReactNode} from 'react';
-import styles from './Layout.module.css';
-import {professionalLinks} from '~/content';
+import React, {ReactNode} from 'react'
+import styles from './Layout.module.css'
+import {professionalLinks} from '~/content'
 
-import type {Project} from '~/types';
-import {Footer} from '~/components/Footer';
-import {List} from '~/components/List';
-import {Header} from '~/components/Header';
-import {A} from '~/components/A';
-import {Text} from '~/components/Text';
-import {Section} from '~/components/Section';
-import {Projects} from '~/components/Projects';
+import type {Post} from 'contentlayer/generated'
+import {Footer} from '~/components/Footer'
+import {List} from '~/components/List'
+import {Header} from '~/components/Header'
+import {A} from '~/components/A'
+import {Text} from '~/components/Text'
+import {Section} from '~/components/Section'
+import {Projects} from '~/components/Projects'
 
 interface LayoutProps {
-  children: ReactNode;
-  projects: Project[];
+  projects: Post[]
 }
 
-export function Layout({projects, children}: LayoutProps) {
+export function Layout({
+  projects,
+  children,
+}: React.PropsWithChildren<LayoutProps>) {
   return (
     <section className={styles.Layout}>
       {children}
@@ -28,5 +30,5 @@ export function Layout({projects, children}: LayoutProps) {
       <Projects projects={projects} />
       <Footer />
     </section>
-  );
+  )
 }
