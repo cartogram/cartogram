@@ -1,14 +1,16 @@
 import {clsx} from 'clsx'
 
-import {ActiveProject} from 'types'
+import {Post} from 'contentlayer/generated'
 import {A} from './A'
+import {Bar} from './Bar'
 import {Text, Small} from './Text'
 
 import styles from './Project.module.css'
 
 interface ProjectProps {
-  project: ActiveProject
+  project: Post
   open?: boolean
+  active?: boolean
 }
 
 const legend = {
@@ -17,29 +19,28 @@ const legend = {
   page: '𝚫',
 }
 
-export function Project({project, open, ...props}: ProjectProps) {
+export function Project({project, active, open, ...props}: ProjectProps) {
   const className = clsx(
     styles.Link,
     open && styles.open,
-    project.active && styles.active,
+    active && styles.active,
     project.pending && styles.inActive,
   )
 
-  const href =
-    project.active || project.slug === undefined
-      ? '/'
-      : project._type !== 'page'
-      ? project.slug
-      : `/page/${project.slug}`
+  const href = active || project.slug === undefined ? '/' : project.slug
 
-  const icons = project.tags?.map(tag => <span key={tag}>{legend[tag]}</span>)
-  const year = project._createdAt
-    ? new Date(project._createdAt).getFullYear()
-    : ''
+  const icons = project.formats?.map(format => (
+    <span key={format.title}>{legend[format.title]}</span>
+  ))
+  const year = project.date ? new Date(project.date).getFullYear() : ''
 
   return (
     <article className={styles.Project} {...props}>
       <A href={project.pending ? undefined : href} className={className}>
+        <div className={styles.Background}>
+          <Bar />
+        </div>
+
         <span className={styles.icons}>{icons}</span>
         <span>
           <Text>{project.title}</Text>

@@ -1,7 +1,7 @@
 .Projects {
   z-index: 1;
   margin-bottom: -4px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid currentColor;
   display: flex;
   flex-direction: column;
   right: 0;
@@ -11,20 +11,38 @@
 }
 
 @media (min-width: 701px) {
+  .Wrap {
+    position: fixed;
+    max-width: 1900px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
   .Projects {
+    right: 0;
     position: absolute;
     width: 50%;
+    border: none;
+    margin-bottom: -4px;
   }
 }
 
 .Label {
-  padding-top: var(--space-sm);
-  padding-bottom: var(--space-sm);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-lg);
   padding-right: var(--space-md);
   margin-right: var(--space-sm);
   position: relative;
   display: flex;
   gap: 16px;
+  background: white;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-top: 1px solid;
+  margin-top: -4px;
 }
 
 .Label *:first-child {
@@ -39,8 +57,8 @@
 
 @media (min-width: 1001px) {
   .Label {
-    margin-right: var(--space-xl);
-    margin-left: var(--space-xl);
-    padding-left: var(--space-md);
+    margin-right: var(--space-lg);
+    margin-left: var(--space-lg);
+    padding-left: var(--space-lg);
   }
 }

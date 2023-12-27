@@ -1,41 +1,25 @@
-'use client';
+'use client'
 
-import {useState, useEffect} from 'react';
-import {ActiveProject} from 'types';
-import {Project} from './Project';
-import {Dash} from './Dash';
-import {Small} from './Text';
-import styles from './Projects.module.css';
-import {useParams} from 'next/navigation';
+import {useState} from 'react'
+import {Post} from 'contentlayer/generated'
+import {Project} from './Project'
+import {Dash} from './Dash'
+import {Small} from './Text'
+import styles from './Projects.module.css'
+import {useParams} from 'next/navigation'
 
 interface ProjectsProps {
-  projects?: ActiveProject[];
-  activeProjectSlug?: string;
+  projects?: Post[]
 }
 
 export function Projects(props: ProjectsProps) {
-  const params = useParams();
-
-  useEffect(() => {
-    document.body.style.setProperty(
-      '--color-primary',
-      ['red', 'blue', 'deeppink'][Math.floor(Math.random() * 3)],
-    );
-  }, []);
-
-  const projects = props.projects?.reduce((acc, project) => {
-    return [
-      ...acc,
-      {
-        ...project,
-        active: project.slug === params?.slug,
-      },
-    ];
-  }, []);
-
-  const hasActiveProject = projects?.some(project => project.active);
-  const forceOpen = Boolean(!params?.slug);
-  const [open, setOpen] = useState(forceOpen);
+  const params = useParams()
+  const {slug} = params
+  const hasActiveProject = props.projects?.some(
+    project => project.slug === slug,
+  )
+  const forceOpen = Boolean(!params?.slug)
+  const [open, setOpen] = useState(forceOpen)
 
   return (
     <section className={styles.Wrap}>
@@ -44,6 +28,14 @@ export function Projects(props: ProjectsProps) {
         onMouseOut={() => setOpen(!hasActiveProject)}
         onMouseOver={() => setOpen(true)}
       >
+        {props.projects?.map((project, index) => (
+          <Project
+            active={project.slug === slug}
+            open={forceOpen || open}
+            key={index}
+            project={project}
+          />
+        ))}
         <div className={styles.Label}>
           <Small>
             <Dash />
@@ -52,10 +44,7 @@ export function Projects(props: ProjectsProps) {
           <Small>Project ✰</Small>
           <Small>Writing ❍</Small>
         </div>
-        {projects?.map((project, index) => (
-          <Project open={forceOpen || open} key={index} project={project} />
-        ))}
       </div>
     </section>
-  );
+  )
 }

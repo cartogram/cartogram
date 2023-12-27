@@ -1,24 +1,23 @@
 import React from 'react'
 
 import {Wordmark} from '~/components/Wordmark'
-import {Content} from '~/components/Content'
+import {Info} from '~/components/Info'
 import {Section} from '~/components/Section'
 import {Header} from '~/components/Header'
 
-export default async function Home() {
-  const title = 'Cartogram'
-  const overview = 'Cartogram is a small design studio in Berlin, Germany.'
+import {threeLiner, title, name} from '~/content'
 
+export default async function Home() {
   return (
     <>
-      <Header title={title} />
+      <Header title={name} />
 
       <Wordmark />
 
-      <Section fill small>
-        <Content>
-          <p>{overview}</p>
-        </Content>
+      <Section fill>
+        <Info>
+          <span dangerouslySetInnerHTML={{__html: threeLiner}} />
+        </Info>
       </Section>
     </>
   )

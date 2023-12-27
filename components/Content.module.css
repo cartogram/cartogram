@@ -1,25 +1,34 @@
 .Content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+
 }
 
 .Content p,
-.Content span {
+.Content span,
+.Content li {
   width: 100%;
   font-weight: normal;
   display: block;
-  font-size: var(--ft-size-body);
   padding-bottom: var(--space-md);
-  max-width: 700px;
+  max-width: 800px;
 }
+
+.Content ul {
+  padding-bottom: var(--space-md);
+}
+
+.Content li,
+.Content li > p,
+.Content li > span {
+  padding-bottom: 0;
+}
+
 
 .Content span strong {
   text-decoration: line-through;
 }
 
-.Content p:first-child,
-.Content span:first-child {
+.Content blockquote > p,
+.Content blockquote > span {
   font-size: var(--ft-size-lg);
 }
 
@@ -43,3 +52,54 @@
   padding: 0;
   text-decoration-color: var(--color-primary);
 }
+
+.Content section {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Content figure {
+  border: 1px solid;
+  border-radius: 4px;
+  background: white;
+  overflow: hidden;
+  padding: 1px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.Content figure img:nth-child(1),
+.Content figure img:nth-child(4),
+.Content figure img:nth-child(5),
+.Content figure img:nth-child(6) {
+  grid-column: 1 / span 2;
+}
+
+
+.Content img {
+  border-radius: 4px;
+  padding: 2px;
+  background: white;
+  overflow: hidden;
+  display: block;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 701px) {
+  .Content section {
+  }
+}
+
+.Content section > figure,
+.Content section > article {
+  padding: var(--space-lg);
+}
+
+.Content img {
+  max-width: 100%;
+}
+

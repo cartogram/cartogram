@@ -1,14 +1,33 @@
 import {allPosts} from 'contentlayer/generated'
 import {getMDXComponent} from 'next-contentlayer/hooks'
+import type {MDXComponents} from 'mdx/types'
 
-import {Content} from '~/components/Content'
 import {Header} from '~/components/Header'
-import {Mast} from '~/components/Mast'
+import {Info} from '~/components/Info'
 import {Section} from '~/components/Section'
-import {Small} from '~/components/Text'
+import {Text, Large} from '~/components/Text'
+import {Image} from '~/components/Image'
+import {ListItem} from '~/components/ListItem'
+import Link from 'next/link'
+import {name} from '~/content'
 
 interface Params {
   slug: string
+}
+
+const mdxComponents: MDXComponents = {
+  a: ({href, children}) => <Link href={href as string}>{children}</Link>,
+  section: Section,
+  Text,
+  Image,
+  blockquote: ({children}) => (
+    <Large>
+      <blockquote>{children}</blockquote>
+    </Large>
+  ),
+  h2: ({children}) => <Large>{children}</Large>,
+  h3: ({children}) => <Large>{children}</Large>,
+  li: ({children}) => <ListItem item={{title: children}} />,
 }
 
 export default async function PageSlugRoute({params}: {params: Params}) {
@@ -20,35 +39,16 @@ export default async function PageSlugRoute({params}: {params: Params}) {
     return null
   }
 
-  const {title} = post
-
-  const PostContent = getMDXComponent(post.body.code)
+  const {body, title} = post
+  const PostContent = getMDXComponent(body.code)
 
   return (
     <>
-      <Header title={title} />
-      {/* <Mast
-        image={coverImage}
-        title={title}
-        overview={overview}
-        duration={duration}
-        link={site}
-      >
-        {client && <Small>{client}</Small>}
-      </Mast> */}
-
+      <Header title="Home" />
       <Section fill>
-        <Content>
-          <article className="py-8 mx-auto max-w-xl">
-            <div className="mb-8 text-center">
-              <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
-                {post.name}
-              </time>
-              <h1>{title}</h1>
-            </div>
-            <PostContent />
-          </article>
-        </Content>
+        <Info>
+          <PostContent components={mdxComponents} />
+        </Info>
       </Section>
     </>
   )
@@ -59,5 +59,9 @@ export const generateStaticParams = async () =>
 
 export const generateMetadata = ({params}) => {
   const post = allPosts.find(post => post._raw.flattenedPath === params.slug)
-  return {title: post.title}
+  return {title: post?.title}
+}
+
+function Button({children}) {
+  return <button style={{padding: 20}}>{children}</button>
 }

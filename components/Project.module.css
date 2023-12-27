@@ -14,19 +14,26 @@
   justify-content: center;
 }
 
+
+
 .Link {
   text-decoration: none;
   align-items: center;
   display: flex;
   width: 100%;
   padding-top: var(--space-xs);
-  /* padding-left: calc(var(--space-md) - 4px); */
   padding-right: calc(var(--space-md) - 4px);
   line-height: 3;
   height: 6px;
   gap: 12px;
   opacity: 0;
   align-items: baseline;
+  position: relative;
+  transition: padding 0.1s ease-in-out;
+}
+
+.Link * {
+  position: relative;
 }
 
 .Link:hover {
@@ -40,22 +47,57 @@
   padding-bottom: var(--space-xs);
 }
 
-.open span:nth-child(2) span {
+.inActive:hover {
+  cursor: not-allowed;
+}
+
+.open span:nth-child(3) span {
   text-decoration: underline;
 }
 
-.active span:nth-child(2) span {
-  text-decoration: line-through;
+.active span:nth-child(3) span {
+  text-decoration: none;
 }
 
 .inActive span:nth-child(2) span {
   text-decoration: none;
 }
 
+.Background {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: var(--space-md);
+  transition: transform 0.2s ease-in-out;
+}
+
+.active.open {
+  padding-bottom: calc(var(--space-sm) + 6px);
+  cursor: default;
+}
+
+.open:not(.inActive):hover {
+  padding-bottom: calc(var(--space-sm) + 6px);
+}
+
+.active.open .Background {
+  transform: translateY(-100%);
+}
+
+.open:not(.inActive):hover .Background {
+  transform: translateY(-100%);
+}
+
 @media (min-width: 701px) {
   .Project {
     margin-left: var(--space-md);
     margin-right: var(--space-md);
+  }
+
+  .Project:last-of-type {
+    border-bottom: 1px solid;
+    margin-bottom: 0;
   }
 }
 
