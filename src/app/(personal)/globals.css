@@ -34,9 +34,8 @@
   --space-lg: 2rem;
   --space-xl: 3rem;
 
-  --color-primary: #000;
+  --color-primary: darkblue;
 
-  /* https://css-generators.com/custom-borders/ */
   --stripes: radial-gradient(
         9.44px at calc(100% + 8px) 50%,
         #0000 calc(99% - 1px),

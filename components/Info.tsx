@@ -1,7 +1,6 @@
 'use client'
 
 import {Content} from './Content'
-import {Large} from './Text'
 import styles from './Info.module.css'
 
 interface InfoProps {}

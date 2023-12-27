@@ -32,9 +32,9 @@
 
 .Label {
   padding-top: var(--space-md);
-  padding-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
   padding-right: var(--space-md);
-  margin-right: var(--space-sm);
+  padding-left: var(--space-md);
   position: relative;
   display: flex;
   gap: 16px;
@@ -46,19 +46,21 @@
 }
 
 .Label *:first-child {
-  width: var(--space-xl);
+  width: var(--space-lg);
 }
+
 
 @media (min-width: 701px) {
   .Label {
-    padding-left: var(--space-md);
+    margin-right: var(--space-md);
+    margin-left: var(--space-md);
   }
 }
-
 @media (min-width: 1001px) {
   .Label {
+    padding-left: var(--space-lg);
     margin-right: var(--space-lg);
     margin-left: var(--space-lg);
-    padding-left: var(--space-lg);
+    padding-bottom: var(--space-lg);
   }
 }
