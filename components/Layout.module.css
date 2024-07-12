@@ -1,10 +1,10 @@
 .Layout {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
+  width: 100%;
   max-width: 1900px;
+  min-height: 100vh;
   margin: 0 auto;
 }

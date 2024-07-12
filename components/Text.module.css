@@ -1,6 +1,6 @@
 .Text {
   width: 100%;
-  font-weight: normal;
+  font-weight: 400;
   display: block;
   font-size: var(--ft-size-body);
 }

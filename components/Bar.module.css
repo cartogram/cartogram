@@ -1,18 +1,18 @@
 .Bar {
-  height: var(--space-lg);
-  width: 100%;
-  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: var(--space-lg);
 }
 
 .Squibbles {
-  height: 100vw;
   position: absolute;
-  transform: translate(0, -50%) rotate(45deg);
-  width: 100vw;
   top: 0;
+  width: 100vw;
+  height: 100vw;
+  transform: translate(0, -50%) rotate(45deg);
   background: var(--color-primary);
   mask: var(--stripes);
   animation-duration: 3s;

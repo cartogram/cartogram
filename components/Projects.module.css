@@ -1,24 +1,24 @@
 .Projects {
   z-index: 1;
-  margin-bottom: -4px;
-  border-bottom: 1px solid currentColor;
-  display: flex;
-  flex-direction: column;
   right: 0;
   bottom: 0;
-  width: 100%;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: -4px;
+  border-bottom: 1px solid currentcolor;
 }
 
 @media (min-width: 701px) {
   .Wrap {
     position: fixed;
-    max-width: 1900px;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    width: 100%;
     z-index: 1;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 1900px;
+    transform: translateX(-50%);
   }
 
   .Projects {
@@ -31,18 +31,16 @@
 }
 
 .Label {
-  padding-top: var(--space-md);
-  padding-bottom: var(--space-md);
-  padding-right: var(--space-md);
-  padding-left: var(--space-md);
   position: relative;
   display: flex;
+  margin-top: -4px;
+  padding: var(--space-md) var(--space-md) var(--space-r) var(--space-md);
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
   gap: 16px;
   background: white;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
-  margin-top: -4px;
+  border-radius: 4px;
 }
 
 .Label *:first-child {
@@ -56,11 +54,12 @@
     margin-left: var(--space-md);
   }
 }
+
 @media (min-width: 1001px) {
   .Label {
     padding-left: var(--space-lg);
     margin-right: var(--space-lg);
     margin-left: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
   }
 }

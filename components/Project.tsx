@@ -4,6 +4,7 @@ import {Post} from 'contentlayer/generated'
 import {A} from './A'
 import {Bar} from './Bar'
 import {Text, Small} from './Text'
+import {Dash} from './Dash'
 
 import styles from './Project.module.css'
 
@@ -40,7 +41,6 @@ export function Project({project, active, open, ...props}: ProjectProps) {
         <div className={styles.Background}>
           <Bar />
         </div>
-
         <span className={styles.icons}>{icons}</span>
         <span>
           <Text>{project.title}</Text>
@@ -48,7 +48,6 @@ export function Project({project, active, open, ...props}: ProjectProps) {
         <span className={styles.pending}>
           {project.pending && (
             <Small>
-              {' '}
               <span className={styles.pill}>Coming Soon</span>
             </Small>
           )}

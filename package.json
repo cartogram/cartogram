@@ -5,28 +5,35 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "lint:css": "stylelint \"**/*.css\""
   },
   "dependencies": {
-    "@portabletext/react": "^3.0.2",
-    "@react-spring/web": "^9.7.2",
-    "@vercel/analytics": "^1.0.1",
-    "clsx": "^1.2.1",
+    "@portabletext/react": "^3.1.0",
+    "@react-spring/web": "^9.7.3",
+    "@vercel/analytics": "^1.3.1",
+    "clsx": "^2.1.1",
     "contentlayer": "^0.3.4",
-    "next": "^13.4.7",
+    "next": "^14.2.5",
     "next-contentlayer": "^0.3.4",
-    "next-sanity": "^5.0.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "use-debounce": "^9.0.4"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "use-debounce": "^10.0.1"
   },
   "devDependencies": {
-    "@types/node": "^20.1.1",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "eslint": "^8.21.0",
-    "eslint-config-next": "^13.4.1",
-    "prettier": "^2.7.1",
-    "typescript": "^5.0.4"
+    "@shopify/stylelint-plugin": "^14.0.0",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.4",
+    "prettier": "^3.3.2",
+    "stylelint": "^16.7.0",
+    "typescript": "^5.5.3"
+  },
+  "stylelint": {
+    "extends": [
+      "@shopify/stylelint-plugin"
+    ]
   }
 }

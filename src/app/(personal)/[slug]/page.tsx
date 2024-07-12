@@ -5,10 +5,12 @@ import type {MDXComponents} from 'mdx/types'
 import {Header} from '~/components/Header'
 import {Info} from '~/components/Info'
 import {Section} from '~/components/Section'
-import {Text, Large} from '~/components/Text'
+import {Text, Small, Large} from '~/components/Text'
 import {Image} from '~/components/Image'
 import {ListItem} from '~/components/ListItem'
-import Link from 'next/link'
+import {Dash} from '~/components/Dash'
+import {A} from '~/components/A'
+
 import {name} from '~/content'
 
 interface Params {
@@ -16,7 +18,7 @@ interface Params {
 }
 
 const mdxComponents: MDXComponents = {
-  a: ({href, children}) => <Link href={href as string}>{children}</Link>,
+  a: ({href, children}) => <A href={href as string}>{children}</A>,
   section: Section,
   Text,
   Image,
@@ -39,14 +41,33 @@ export default async function PageSlugRoute({params}: {params: Params}) {
     return null
   }
 
-  const {body, title} = post
+  const {body, formats, title} = post
   const PostContent = getMDXComponent(body.code)
+
+  const isPage = formats?.find(format => format.title === 'page')
+
+  const mast = isPage ? null : (
+    <>
+      <Text>{post.description}</Text>
+      <Small>view</Small>
+      <Dash />
+      <Small>
+        <A href={post.link} external>
+          {post.link?.replace('https://', '')}
+        </A>
+      </Small>
+      <Small>roles</Small>
+      <Dash />
+      <Small>{post.roles?.map(role => role.title).join(', ')}</Small>
+    </>
+  )
 
   return (
     <>
-      <Header title="Home" />
+      <Header title={name} />
       <Section fill>
         <Info>
+          {mast}
           <PostContent components={mdxComponents} />
         </Info>
       </Section>

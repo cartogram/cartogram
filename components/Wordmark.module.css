@@ -1,12 +1,12 @@
 .Wordmark {
   position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  pointer-events: none;
   z-index: 0;
-  left: 0;
   right: 0;
-  height: 100vh;
+  left: 0;
+  display: flex;
   overflow: hidden;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  pointer-events: none;
 }

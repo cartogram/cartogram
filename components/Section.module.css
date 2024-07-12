@@ -12,7 +12,7 @@
 
 @media (min-width: 1001px) {
   .Section {
-    margin: var(--space-lg);
+    margin: var(--space-xl);
   }
 }
 

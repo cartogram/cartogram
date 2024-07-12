@@ -1,7 +1,4 @@
 @media (prefers-color-scheme: dark) {
-  :root {
-  }
-
   html {
     color-scheme: dark;
   }
@@ -13,13 +10,11 @@
   --ft-body-max: 5rem;
   --ft-body: 16;
   --ft-body-vw: calc(var(--ft-body) / var(--ft-screen-width) * 100vw);
-
   --ft-size-body: clamp(
     var(--ft-body-min),
     var(--ft-body-vw),
     var(--ft-body-max)
   );
-
   --ft-size-sm: 0.8rem;
   --ft-lg: 21;
   --ft-size-lg: clamp(
@@ -27,29 +22,26 @@
     var(--ft-body-vw) * (var(--ft-lg) / var(--ft-body)),
     var(--ft-body-max) * (var(--ft-lg) / var(--ft-body))
   );
-
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
   --space-xl: 3rem;
-
   --color-primary: darkblue;
-
   --stripes: radial-gradient(
-        9.44px at calc(100% + 8px) 50%,
-        #0000 calc(99% - 1px),
-        #000 calc(101% - 1px) 99%,
-        #0000 101%
-      )
-      calc(50% - 2.5px + 0.5px) calc(50% - 8px) / 5px 16px,
+    9.44px at calc(100% + 8px) 50%,
+    #0000 calc(99% - 1px),
+    #000 calc(101% - 1px) 99%,
+    #0000 101%
+  )
+    calc(50% - 2.5px + 0.5px) calc(50% - 8px) / 5px 16px,
     radial-gradient(
-        9.44px at -8px 50%,
-        #0000 calc(99% - 1px),
-        #000 calc(101% - 1px) 99%,
-        #0000 101%
-      )
-      calc(50% + 2.5px) 50%/5px 16px;
+    9.44px at -8px 50%,
+    #0000 calc(99% - 1px),
+    #000 calc(101% - 1px) 99%,
+    #0000 101%
+  )
+    calc(50% + 2.5px) 50%/5px 16px;
   -webkit-mask: var(--mask);
   mask: var(--mask);
 }
@@ -66,24 +58,23 @@ body > div {
 body {
   --space-1rem: 1em;
   --space-05rem: 0.5em;
-  font-family: 'lausanna', sans-serif;
-  font-weight: 300;
+  font-family: lausanna, sans-serif;
   font-size: var(--ft-size-body);
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   color: var(--color-primary);
-  background: url(/noise.png);
+  background: url("/noise.png");
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
   border: 0;
   margin: 0;
   padding: 0;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 a {

@@ -1,10 +1,10 @@
 .ListItem {
-  list-style: none;
+  position: relative;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  position: relative;
-  white-space: nowrap;
   width: 50%;
+  list-style: none;
+  white-space: nowrap;
 }

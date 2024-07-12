@@ -5,7 +5,7 @@
 .Content span,
 .Content li {
   width: 100%;
-  font-weight: normal;
+  font-weight: 400;
   display: block;
   padding-bottom: var(--space-md);
   max-width: 800px;
@@ -21,9 +21,18 @@
   padding-bottom: 0;
 }
 
+.Content article {
+  column-count: 2;
+}
 
 .Content span strong {
   text-decoration: line-through;
+}
+
+.Content blockquote {
+  padding: 0 0 var(--space-xl) 0;
+  display: block;
+  column-span: all;
 }
 
 .Content blockquote > p,
@@ -108,7 +117,7 @@
 
 .Content section > figure,
 .Content section > article {
-  padding: var(--space-lg);
+  padding: 0 var(--space-lg);
 }
 
 .Content img {

@@ -1,16 +1,16 @@
 .AvailableForHire {
   position: absolute;
-  height: 10.4vw;
-  width: 13vw;
-  text-align: center;
-  min-height: 104px;
-  min-width: 130px;
-  max-height: 208px;
-  max-width: 260px;
+  top: 0;
   right: -2rem;
   display: flex;
-  top: 0rem;
   display: block;
+  width: 13vw;
+  min-width: 130px;
+  max-width: 260px;
+  height: 10.4vw;
+  min-height: 104px;
+  max-height: 208px;
+  text-align: center;
 }
 
 .AvailableForHire * {
@@ -36,41 +36,41 @@
 
 .Background {
   position: absolute;
-  height: 10.4vw;
-  width: 13vw;
-  min-height: 104px;
-  min-width: 130px;
-  max-height: 208px;
-  max-width: 260px;
-  overflow: hidden;
-  transform: skew(45deg) translate(0%, -50%);
   top: 50%;
   left: 50%;
+  overflow: hidden;
+  width: 13vw;
+  min-width: 130px;
+  max-width: 260px;
+  height: 10.4vw;
+  min-height: 104px;
+  max-height: 208px;
+  transform: skew(45deg) translate(0%, -50%);
 }
 
-.Background:after {
-  position: absolute;
+.Background::after {
   content: '';
-  top: 0px;
-  left: 0px;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 80%;
-  background: white;
+  height: 100%;
   border: 1px solid;
   border-radius: 50%;
+  background: white;
   transform: skew(-45deg);
 }
 
-.Background:before {
-  position: absolute;
+.Background::before {
   content: '';
+  position: absolute;
+  z-index: 2;
   top: 50%;
   left: -80%;
-  height: 100%;
   width: 80%;
-  background: var(--color-primary);
+  height: 100%;
   border-radius: 50%;
+  background: var(--color-primary);
   transform: skew(-45deg);
-  z-index: 2;
   mask: var(--stripes);
 }

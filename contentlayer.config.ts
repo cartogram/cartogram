@@ -23,6 +23,13 @@ const Format = defineNestedType(() => ({
   },
 }))
 
+const Role = defineNestedType(() => ({
+  name: 'Role',
+  fields: {
+    title: {type: 'string', required: true},
+  },
+}))
+
 const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `**/*.mdx`,
@@ -50,6 +57,18 @@ const Post = defineDocumentType(() => ({
     formats: {
       type: 'list',
       of: Format,
+    },
+    roles: {
+      type: 'list',
+      of: Role,
+    },
+    description: {
+      type: 'string',
+      description: 'The description of the post',
+    },
+    link: {
+      type: 'string',
+      description: 'The link of the post',
     },
   },
   computedFields: {
